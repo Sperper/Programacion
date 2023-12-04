@@ -7,26 +7,97 @@ public class CuentaBancaria {
     public String titular;
     public String[] movimientos;
 
-    public CuantaBancaria(String iban, String titular) {
+    public CuentaBancaria(String iban, String titular) {
 
         this.saldo = 0.0;
         this.movimientos = new String[100];
+        this.titular = titular;
 
         // FALTA POR SETEAR EL IBAN Y EL TITULAR
-
 
 
     }
 
     public void ingresar(double cantidadIngreso) {
 
+        if(cantidadIngreso <= 3000.00 && cantidadIngreso > 0) {
 
+            System.out.println("Se ha ingresado "+cantidadIngreso);
+            this.saldo = this.saldo + cantidadIngreso;
+            for (int i = 0; i <= movimientos.length - 1; i++){
+                int contador = 1;
+                if (movimientos[i] == null) {
+
+                    movimientos[i] = "E00" + contador;
+                    break;
+
+                }
+                contador++;
+            }
+
+
+        } else if (cantidadIngreso > 3000.00) {
+
+            System.out.println("AVISO: Notificar a hacienda");
+            this.saldo = this.saldo + cantidadIngreso;
+
+        } else {
+            System.out.println("ERROR: La cantidad a ingresar no es válida");
+        }
 
     }
 
     public void retirar(double cantidadRetirar) {
 
+        if (cantidadRetirar <= 3000 && cantidadRetirar > 0) {
 
+            System.out.println("Se ha retirado "+cantidadRetirar);
+            this.saldo = this.saldo - cantidadRetirar;
+
+            if (this.saldo < 0 && this.saldo > -50) {
+                System.out.println("AVISO: Saldo negativo");
+            } else if (this.saldo < -50) {
+                System.out.println("ERROR AL RETIRAR");
+                this.saldo = this.saldo + cantidadRetirar;
+            }
+
+
+        } else if (cantidadRetirar > 3000) {
+
+            System.out.println("AVISO: Notificar a hacienda");
+            this.saldo = this.saldo - cantidadRetirar;
+
+            if (this.saldo < 0 && this.saldo > -50) {
+                System.out.println("AVISO: Saldo negativo");
+            } else if (this.saldo < -50) {
+                System.out.println("ERROR AL RETIRAR");
+                this.saldo = this.saldo + cantidadRetirar;
+            }
+
+        }
+
+
+    }
+
+    public void mostrarIban() {
+
+        System.out.println(this.iban);
+
+    }
+
+    public void mostrarSaldo() {
+
+
+
+    }
+
+    public void mostrarMovimiento (){
+
+        for (int i = 0; i <= movimientos.length - 1; i++){
+            if (movimientos[i] != null) {
+                System.out.println(movimientos[i]);
+            }
+        }
 
     }
 
