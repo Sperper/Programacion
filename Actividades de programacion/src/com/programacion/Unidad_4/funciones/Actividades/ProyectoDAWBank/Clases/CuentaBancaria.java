@@ -12,6 +12,7 @@ public class CuentaBancaria {
         this.saldo = 0.0;
         this.movimientos = new String[100];
         this.titular = titular;
+        this.iban = iban;
 
         // FALTA POR SETEAR EL IBAN Y EL TITULAR
 
@@ -38,7 +39,7 @@ public class CuentaBancaria {
 
         } else if (cantidadIngreso > 3000.00) {
 
-            System.out.println("AVISO: Notificar a hacienda");
+            System.out.println(DawUtils.avisoHacienda);
             this.saldo = this.saldo + cantidadIngreso;
 
         } else {
@@ -55,7 +56,7 @@ public class CuentaBancaria {
             this.saldo = this.saldo - cantidadRetirar;
 
             if (this.saldo < 0 && this.saldo > -50) {
-                System.out.println("AVISO: Saldo negativo");
+                System.out.println(DawUtils.avisoNumerosRojos);
             } else if (this.saldo < -50) {
                 System.out.println("ERROR AL RETIRAR");
                 this.saldo = this.saldo + cantidadRetirar;
@@ -64,11 +65,11 @@ public class CuentaBancaria {
 
         } else if (cantidadRetirar > 3000) {
 
-            System.out.println("AVISO: Notificar a hacienda");
+            System.out.println(DawUtils.avisoHacienda);
             this.saldo = this.saldo - cantidadRetirar;
 
             if (this.saldo < 0 && this.saldo > -50) {
-                System.out.println("AVISO: Saldo negativo");
+                System.out.println(DawUtils.avisoNumerosRojos);
             } else if (this.saldo < -50) {
                 System.out.println("ERROR AL RETIRAR");
                 this.saldo = this.saldo + cantidadRetirar;
@@ -87,7 +88,7 @@ public class CuentaBancaria {
 
     public void mostrarSaldo() {
 
-
+        System.out.println(this.saldo);
 
     }
 

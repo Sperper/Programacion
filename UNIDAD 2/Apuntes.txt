@@ -1,0 +1,61 @@
+TEMA 2 - Estructuras repetitivas
+	 Control de excepciones
+-------------------------------------------------------------------------------------
+Estructuras repetitivas (Bucles)
+		|				|			|
+Est Mientras	|	Est haz mientras	|	Est para	|
+		|				|			|
+while		|	do-while		|	for		|
+		|				|			|
++ Se repite	|	+ Se repite		|	+ Se repite	|
+		|				|			|
+0 , X		|	como mínimo		|	un nº conocido 	|
+		|	1 vez o X veces		|	de veces	|
+
+Pseudocódigo 		|	
+			| Para (int num = 0; num <= 20; num ++){     
+mientras (Condición) {	|	instrucción 1;
+	instrucción;	|	instrucción 2;
+}			|_}
+-------------------------|------------------------------------------
+Mientras (hora < 15:00){ | "Remedios" -> 8
+	asistir a clase; | para (int i = 0; i < longitud palabra, i++)
+	bostezar;	 | ¿es la letra en posición i = "z"?
+	picar código;	 | 
+	imnutos ++;	 |
+}			 |
+			 |
+Ir a casa;      	 |
+
+-------------------------------------------------------------------------
+
+string cadena = "Hola"
+
+int-----|
+double -|-> + -> suma   
+float --|
+
+string + otra cosa = concatenación
+
+--------------------------------------------------------------------------
+				     
+String cadena = "Hola"		     
+String letra = "a"
+String resultado;
+
+resultado = cadena + letra;
+resultado = resultado + cadena + a 
+
+---------------------------------------------------------------------------
+
+Comparación de cadenas (String)
+
+== -> equals() -> Método (String)
+
+String cadena = "Hola"
+String cadena2 = "Adios"
+
+boolean comparacion = cadena.equals(cadena2) -> True o Flase -> En este caso false
+boolean comp2 = cadena.equals("hola"); -> En este caso 
+
+---------------------------------------------------------------------------
