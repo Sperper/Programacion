@@ -12,6 +12,8 @@ public class Tipo {
     //***************************************************************
     public Tipo(String nombre) {
 
+        this.nombre = nombre;
+
         // Establece el nombre del ataque
         // -> No hay restricciones
         // Si el tipo de ataque existe...
