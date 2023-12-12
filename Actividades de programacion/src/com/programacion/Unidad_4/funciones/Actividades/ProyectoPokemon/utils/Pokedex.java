@@ -41,25 +41,25 @@ public class Pokedex {
 
     /**
      *
-     * @param tipoataque tipo del ataque
+     * @param tipoAtaque tipo del ataque
      * @param tipoRecibeAtaque tipo que recibe el ataque
      * @return (double) modificador del danio del ataque (1.5 muy efectivo, 1 normal, 0.5 poco efectivo, 0 inmune)
      */
-    public static double checkEfectividad(Tipo tipoataque, Tipo tipoRecibeAtaque) {
+    public static double checkEfectividad(Tipo tipoAtaque, Tipo tipoRecibeAtaque) {
 
         // Comprueba la efectividad del ataque entre dos tipos
         // Devuelve un modificador de danio (1.5, 1, 0.5, 0)
 
         double efectividad = 0.0;
 
-        if (tipoataque.equals("acero")){
+        if (tipoAtaque.nombre.equalsIgnoreCase("acero")){
 
-            if (tipoRecibeAtaque.equals("hielo") || tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("hada")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("hielo") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hada")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("agua") || tipoRecibeAtaque.equals("electrico") || tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("agua") || tipoRecibeAtaque.nombre.equalsIgnoreCase("electrico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -71,14 +71,14 @@ public class Pokedex {
 
             }
 
-        } else  if (tipoataque.equals("volador")){
+        } else  if (tipoAtaque.nombre.equalsIgnoreCase("volador")){
 
-            if (tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("bicho") || tipoRecibeAtaque.equals("lucha")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("bicho") || tipoRecibeAtaque.nombre.equalsIgnoreCase("lucha")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("electrico") || tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("electrico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -90,14 +90,14 @@ public class Pokedex {
 
             }
 
-            } else  if (tipoataque.equals("agua")){
+            } else  if (tipoAtaque.nombre.equalsIgnoreCase("agua")){
 
-            if (tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("tierra")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("agua") || tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("dragon")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("agua") || tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -109,14 +109,14 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("hielo")){
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("hielo")){
 
-            if (tipoRecibeAtaque.equals("volador") || tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("tierra") || tipoRecibeAtaque.equals("dragon")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("volador") || tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra") || tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("hielo") || tipoRecibeAtaque.equals("agua") || tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("hielo") || tipoRecibeAtaque.nombre.equalsIgnoreCase("agua") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -128,14 +128,14 @@ public class Pokedex {
 
             }
 
-        } else  if (tipoataque.equals("planta")){
+        } else  if (tipoAtaque.nombre.equalsIgnoreCase("planta")){
 
-            if (tipoRecibeAtaque.equals("agua") || tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("tierra")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("agua") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("volador") || tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("bicho") || tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("veneno") || tipoRecibeAtaque.equals("dragon") || tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("volador") || tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("bicho") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("veneno") || tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -147,14 +147,14 @@ public class Pokedex {
 
             }
 
-        } else  if (tipoataque.equals("bicho")){
+        } else  if (tipoAtaque.nombre.equalsIgnoreCase("bicho")){
 
-            if (tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("psiquico") || tipoRecibeAtaque.equals("siniestro")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("psiquico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("siniestro")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("volador") || tipoRecibeAtaque.equals("lucha") || tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("acero") || tipoRecibeAtaque.equals("hada") || tipoRecibeAtaque.equals("veneno") || tipoRecibeAtaque.equals("fantasma")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("volador") || tipoRecibeAtaque.nombre.equalsIgnoreCase("lucha") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hada") || tipoRecibeAtaque.nombre.equalsIgnoreCase("veneno") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fantasma")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -166,19 +166,19 @@ public class Pokedex {
 
             }
 
-        } else  if (tipoataque.equals("electrico")){
+        } else  if (tipoAtaque.nombre.equalsIgnoreCase("electrico")){
 
-            if (tipoRecibeAtaque.equals("volador") || tipoRecibeAtaque.equals("agua")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("volador") || tipoRecibeAtaque.nombre.equalsIgnoreCase("agua")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("electrico") || tipoRecibeAtaque.equals("dragon")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("electrico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("tierra")){
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra")){
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -190,14 +190,14 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("normal")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("normal")) {
 
-            if (tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("dragon")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("fantasma")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("fantasma")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune");
@@ -209,14 +209,14 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("roca")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("roca")) {
 
-            if (tipoRecibeAtaque.equals("volador") || tipoRecibeAtaque.equals("hielo") || tipoRecibeAtaque.equals("bicho") || tipoRecibeAtaque.equals("fuego")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("volador") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hielo") || tipoRecibeAtaque.nombre.equalsIgnoreCase("bicho") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("tierra") || tipoRecibeAtaque.equals("lucha") || tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra") || tipoRecibeAtaque.nombre.equalsIgnoreCase("lucha") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -228,19 +228,19 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("tierra")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("tierra")) {
 
-            if (tipoRecibeAtaque.equals("electrico") || tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("veneno") || tipoRecibeAtaque.equals("acero")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("electrico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("veneno") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("bicho")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("bicho")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("volador")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("volador")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -252,14 +252,14 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("fuego")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("fuego")) {
 
-            if (tipoRecibeAtaque.equals("hielo") || tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("bicho") || tipoRecibeAtaque.equals("acero")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("hielo") || tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("bicho") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("agua") || tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("dragon")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("agua") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
@@ -271,19 +271,19 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("lucha")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("lucha")) {
 
-            if (tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("normal") || tipoRecibeAtaque.equals("hielo") || tipoRecibeAtaque.equals("siniestro") || tipoRecibeAtaque.equals("acero")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("normal") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hielo") || tipoRecibeAtaque.nombre.equalsIgnoreCase("siniestro") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("volador") || tipoRecibeAtaque.equals("psiquico") || tipoRecibeAtaque.equals("bicho") || tipoRecibeAtaque.equals("hada") || tipoRecibeAtaque.equals("veneno")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("volador") || tipoRecibeAtaque.nombre.equalsIgnoreCase("psiquico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("bicho") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hada") || tipoRecibeAtaque.nombre.equalsIgnoreCase("veneno")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("fantasma")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("fantasma")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -295,19 +295,19 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("hada")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("hada")) {
 
-            if (tipoRecibeAtaque.equals("lucha") || tipoRecibeAtaque.equals("dragon") || tipoRecibeAtaque.equals("siniestro")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("lucha") || tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon") || tipoRecibeAtaque.nombre.equalsIgnoreCase("siniestro")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("fuego") || tipoRecibeAtaque.equals("veneno") || tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("veneno") || tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("tierra")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -319,19 +319,19 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("psiquico")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("psiquico")) {
 
-            if (tipoRecibeAtaque.equals("lucha") || tipoRecibeAtaque.equals("veneno")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("lucha") || tipoRecibeAtaque.nombre.equalsIgnoreCase("veneno")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("acero") || tipoRecibeAtaque.equals("psiquico")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("acero") || tipoRecibeAtaque.nombre.equalsIgnoreCase("psiquico")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("siniestro")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("siniestro")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -343,19 +343,19 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("veneno")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("veneno")) {
 
-            if (tipoRecibeAtaque.equals("planta") || tipoRecibeAtaque.equals("hada")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("planta") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hada")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("roca") || tipoRecibeAtaque.equals("tierra") || tipoRecibeAtaque.equals("veneno") || tipoRecibeAtaque.equals("fantasma")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra") || tipoRecibeAtaque.nombre.equalsIgnoreCase("veneno") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fantasma")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -367,19 +367,19 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("dragon")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("dragon")) {
 
-            if (tipoRecibeAtaque.equals("dragon")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("dragon")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("acero")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("acero")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            }else if (tipoRecibeAtaque.equals("hada")) {
+            }else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("hada")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -391,19 +391,19 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("fantasma")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("fantasma")) {
 
-            if (tipoRecibeAtaque.equals("psiquico") || tipoRecibeAtaque.equals("fantasma")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("psiquico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fantasma")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("siniestro")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("siniestro")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");
 
-            } else if (tipoRecibeAtaque.equals("normal")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("normal")) {
 
                 efectividad = 0;
                 System.out.println("El pokemon enemigo es inmune a este ataque");
@@ -415,14 +415,14 @@ public class Pokedex {
 
             }
 
-        } else if (tipoataque.equals("siniestro")) {
+        } else if (tipoAtaque.nombre.equalsIgnoreCase("siniestro")) {
 
-            if (tipoRecibeAtaque.equals("psiquico") || tipoRecibeAtaque.equals("fantasma")) {
+            if (tipoRecibeAtaque.nombre.equalsIgnoreCase("psiquico") || tipoRecibeAtaque.nombre.equalsIgnoreCase("fantasma")) {
 
                 efectividad = 1.5;
                 System.out.println("Es muy efectivo");
 
-            } else if (tipoRecibeAtaque.equals("lucha") || tipoRecibeAtaque.equals("hada") || tipoRecibeAtaque.equals("siniestro")) {
+            } else if (tipoRecibeAtaque.nombre.equalsIgnoreCase("lucha") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hada") || tipoRecibeAtaque.nombre.equalsIgnoreCase("siniestro")) {
 
                 efectividad = 0.5;
                 System.out.println("Es poco efectivo");

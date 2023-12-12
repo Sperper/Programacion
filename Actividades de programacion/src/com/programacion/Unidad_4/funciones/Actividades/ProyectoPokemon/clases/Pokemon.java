@@ -24,6 +24,10 @@ public class Pokemon {
      */
     public Pokemon(String nombre, double vida, Tipo tipo) {
 
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.vida = vida;
+
 
     }
 }
