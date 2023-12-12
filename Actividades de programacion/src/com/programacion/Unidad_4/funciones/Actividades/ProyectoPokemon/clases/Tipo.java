@@ -1,5 +1,7 @@
 package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases;
 
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.utils.Pokedex;
+
 public class Tipo {
 
     //***************************************************************
@@ -13,6 +15,8 @@ public class Tipo {
     public Tipo(String nombre) {
 
         this.nombre = nombre;
+
+        if (Pokedex.checkTipoExiste())
 
         // Establece el nombre del ataque
         // -> No hay restricciones
