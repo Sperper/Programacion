@@ -9,53 +9,115 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pokemon haxorus = new Pokemon("Haxorus", 200.00, new Tipo("Dragon"));
-        haxorus.ataques = new Ataque[]{
-                new Ataque("Cola Dragon", new Tipo("Dragon"), 50.00),
-                new Ataque("Garra Dragon", new Tipo("Dragon"), 38.00),
-                new Ataque("Terromoto", new Tipo("Tierra"), 40.00),
-                new Ataque("Tajo Umbrio", new Tipo("Siniestro"), 20.00)
-        };
+        Tipo dragon = new Tipo("Dragon");
+        Tipo veneno = new Tipo("Veneno");
+        Tipo agua = new Tipo("Agua");
+        Tipo volador = new Tipo("Volador");
+        Tipo roca = new Tipo("Roca");
+        Tipo fuego = new Tipo("Fuego");
+        Tipo electrico = new Tipo("Electrico");
+        Tipo acero = new Tipo("Acero");
+        Tipo fantasma = new Tipo("Fantasma");
+        Tipo hada = new Tipo("Hada");
+        Tipo hielo = new Tipo("Hielo");
+        Tipo lucha = new Tipo("Lucha");
+        Tipo normal = new Tipo("Normal");
+        Tipo planta = new Tipo("Planta");
+        Tipo psiquico = new Tipo("Psiquico");
+        Tipo siniestro = new Tipo("Siniestro");
+        Tipo tierra = new Tipo("Tierra");
+        Tipo bicho = new Tipo("Bicho");
 
-        Pokemon meowstic = new Pokemon("Meowstic", 150.00, new Tipo("Psiquico"));
-        meowstic.ataques = new Ataque[]{
-                new Ataque("Bola Sombra", new Tipo("Fantasma"), 60.00),
-                new Ataque("Golpe Bajo", new Tipo("Siniestro"), 30.00),
-                new Ataque("Energibola", new Tipo("Planta"), 70.00),
-                new Ataque("Psiquico", new Tipo("Psiquico"), 45.00)
-        };
 
-        Pokemon lycanroc = new Pokemon("Lycanrock", 175.00, new Tipo("Roca"));
-        lycanroc.ataques = new Ataque[]{
-                new Ataque("Roca Afilada", new Tipo("Roca"), 30.00),
-                new Ataque("Triturar", new Tipo("Siniestro"), 60.00),
-                new Ataque("Lanzarrocas", new Tipo("Roca"), 55.00),
-                new Ataque("Treparrocas", new Tipo("Roca"), 25.00)
-        };
+        Pokemon pikachu = new Pokemon("Pikachu", 200.00, electrico);
 
-        Pokemon pikachu = new Pokemon("Pikachu", 220.00, new Tipo("Electrico"));
-        pikachu.ataques = new Ataque[]{
-                new Ataque("Chispa", new Tipo("Electrico"), 60.00),
-                new Ataque("Bola Voltio", new Tipo("Electrico"), 30.00),
-                new Ataque("Atizar", new Tipo("Normal"), 50.00),
-                new Ataque("Ataque rapido", new Tipo("Normal"), 45.00)
-        };
+        Ataque chispa = new Ataque("Chispa", electrico, 65);
+        Ataque amago = new Ataque("Amago", normal, 30);
+        Ataque bolaVoltio = new Ataque("Bola Voltio", electrico, 100);
+        Ataque ataqueRapido = new Ataque("Ataque Rapido", normal, 40);
 
-        Pokemon rapidash = new Pokemon("Rapidash", 180.00, new Tipo("Fuego"));
-        rapidash.ataques = new Ataque[]{
-                new Ataque("Llamarada", new Tipo("Fuego"), 60.00),
-                new Ataque("Bote", new Tipo("Volador"), 45.00),
-                new Ataque("Ataque Fueria", new Tipo("Normal"), 30.00),
-                new Ataque("Megacuerno", new Tipo("Bicho"), 55.00)
-        };
+        pikachu.ataques[0] = chispa;
+        pikachu.ataques[1] = amago;
+        pikachu.ataques[2] = bolaVoltio;
+        pikachu.ataques[3] = ataqueRapido;
 
-        Pokemon seaking = new Pokemon("Seakingg", 240.00, new Tipo("Agua"));
-        seaking.ataques = new Ataque[]{
-                new Ataque("Puya Nociva", new Tipo("Veneno"), 45.00),
-                new Ataque("Picotazo", new Tipo("Volador"), 20.00),
-                new Ataque("Hidropulso", new Tipo("Agua"), 50.00),
-                new Ataque("Mega Cuerno", new Tipo("Bicho"), 45.00)
-        };
+
+        Pokemon alakazam = new Pokemon("Alakazam", 200.00, psiquico);
+
+        Ataque confusion = new Ataque("Confusion", psiquico, 50);
+        Ataque psicorrayo = new Ataque("Psicorrayo", psiquico, 65);
+        Ataque placaje = new Ataque("Placaje", normal, 20);
+        Ataque psicocorte = new Ataque("Psicocorte", psiquico, 70);
+
+        alakazam.ataques[0] = confusion;
+        alakazam.ataques[1] = psicorrayo;
+        alakazam.ataques[2] = placaje;
+        alakazam.ataques[3] = psicocorte;
+
+
+        Pokemon marowak = new Pokemon("Marowak", 200.00, tierra);
+
+        Ataque huesoPalo = new Ataque("Hueso Palo", tierra, 65);
+        Ataque dobleFilo = new Ataque("Doble Filo", normal, 120);
+        Ataque pataleta = new Ataque("Pataleta", tierra, 20);
+        Ataque golpe = new Ataque("Golpe", normal, 100);
+
+        marowak.ataques[0] = huesoPalo;
+        marowak.ataques[1] = dobleFilo;
+        marowak.ataques[2] = pataleta;
+        marowak.ataques[3] = golpe;
+
+
+        Pokemon machamp = new Pokemon("Machamp", 200.00, lucha);
+
+        Ataque tajoCruzado = new Ataque("Tajo Cruzado", lucha, 100);
+        Ataque golpBis = new Ataque("Golpe Bis", dragon, 40);
+        Ataque desarme = new Ataque("Desarme", siniestro, 65);
+        Ataque puñoDinamico = new Ataque("Puño Dinamico", lucha, 100);
+
+        machamp.ataques[0] = tajoCruzado;
+        machamp.ataques[1] = golpBis;
+        machamp.ataques[2] = desarme;
+        machamp.ataques[3] = puñoDinamico;
+
+
+        Pokemon rapidash = new Pokemon("Rapidash", 200.00, fuego);
+
+        Ataque llamarada = new Ataque("Llamarada", fuego, 110);
+        Ataque bote = new Ataque("Bote", volador, 85);
+        Ataque nitrocarga = new Ataque("Nitrocarga", fuego, 50);
+        Ataque megacuerno = new Ataque("Megacuerno", bicho, 100);
+
+        rapidash.ataques[0] = llamarada;
+        rapidash.ataques[1] = bote;
+        rapidash.ataques[2] = nitrocarga;
+        rapidash.ataques[3] = megacuerno;
+
+
+        Pokemon umbreon = new Pokemon("Umbreon", 200.00, siniestro);
+
+        Ataque ultimaBaza = new Ataque("Ultima Baza", normal, 100);
+        Ataque finta = new Ataque("Finta", siniestro, 60);
+        Ataque persecucion = new Ataque("Persecucion", siniestro, 40);
+
+        umbreon.ataques[0] = ultimaBaza;
+        umbreon.ataques[1] = finta;
+        umbreon.ataques[2] = ataqueRapido;
+        umbreon.ataques[3] = persecucion;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

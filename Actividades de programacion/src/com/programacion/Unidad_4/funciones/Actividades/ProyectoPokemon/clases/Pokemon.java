@@ -10,7 +10,7 @@ public class Pokemon {
    public String lore;
    public Tipo tipo;
    public double vida;
-   public Ataque[] ataques;
+   public Ataque[] ataques = new Ataque[4];
 
     //***************************************************************
     //*********************CONSTRUCTORES DE CLASE********************
@@ -28,6 +28,13 @@ public class Pokemon {
         this.tipo = tipo;
         this.vida = vida;
 
+
+    }
+
+    public void RecibirAtaque(Ataque ataque){
+
+        this.vida-=ataque.danio;
+        System.out.println("Vida restante de "+this.nombre+": "+this.vida);
 
     }
 }

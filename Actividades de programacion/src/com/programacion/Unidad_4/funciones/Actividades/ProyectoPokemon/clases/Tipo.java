@@ -24,14 +24,11 @@ public class Tipo {
 
         if (Pokedex.checkTipoExiste(nombre)) {
 
-            System.out.println("Revisando si el tipo introducido existe...");
-            System.out.println("El tipo existe");
             this.nombre = nombre;
 
         } else {
 
-            System.out.println("Revisando si el tipo introducido existe...");
-            System.out.println("No existe");
+            this.nombre = null;
 
         }
 
