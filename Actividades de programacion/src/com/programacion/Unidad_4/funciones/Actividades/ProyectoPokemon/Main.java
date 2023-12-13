@@ -2,12 +2,17 @@ package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon;
 
 
 import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Ataque;
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Jugador;
 import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Pokemon;
 import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Tipo;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
 
         Tipo dragon = new Tipo("Dragon");
         Tipo veneno = new Tipo("Veneno");
@@ -104,6 +109,16 @@ public class Main {
         umbreon.ataques[1] = finta;
         umbreon.ataques[2] = ataqueRapido;
         umbreon.ataques[3] = persecucion;
+
+        System.out.println("Introduzca el usuario del jugador 1: ");
+        String usuario1 = scan.next();
+        Jugador jugador1 = new Jugador(usuario1);
+
+        System.out.println("Introduzca el usuario del jugador 2: ");
+        String usuario2 = scan.next();
+        Jugador jugador2 = new Jugador(usuario2);
+
+
 
 
 
