@@ -6,6 +6,7 @@ import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Ju
 import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Pokemon;
 import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Tipo;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -78,12 +79,12 @@ public class Main {
         Ataque tajoCruzado = new Ataque("Tajo Cruzado", lucha, 100);
         Ataque golpBis = new Ataque("Golpe Bis", dragon, 40);
         Ataque desarme = new Ataque("Desarme", siniestro, 65);
-        Ataque puñoDinamico = new Ataque("Puño Dinamico", lucha, 100);
+        Ataque punioDinamico = new Ataque("Punio Dinamico", lucha, 100);
 
         machamp.ataques[0] = tajoCruzado;
         machamp.ataques[1] = golpBis;
         machamp.ataques[2] = desarme;
-        machamp.ataques[3] = puñoDinamico;
+        machamp.ataques[3] = punioDinamico;
 
 
         Pokemon rapidash = new Pokemon("Rapidash", 200.00, fuego);
@@ -117,6 +118,254 @@ public class Main {
         System.out.println("Introduzca el usuario del jugador 2: ");
         String usuario2 = scan.next();
         Jugador jugador2 = new Jugador(usuario2);
+
+        int contador1 = 0;
+        int contador2 = 0;
+        int pokemonsElegidos = 0;
+
+        do {
+
+
+
+
+            System.out.println("1. Pikachu");
+            System.out.println("2. Alakazam");
+            System.out.println("3. Marowak");
+            System.out.println("4. Machamp");
+            System.out.println("5. Rapidash");
+            System.out.println("6. Umbreom");
+
+
+            System.out.println("Elige "+jugador1.usuario);
+            int eleccionJugador1 = scan.nextInt();
+
+            if (contador1 != 2) {
+
+                if (eleccionJugador1 == 1) {
+
+                    jugador1.equipo[contador1] = pikachu;
+                    contador1++;
+                    System.out.println(pikachu.nombre + " aniadido");
+
+                } else if (eleccionJugador1 == 2) {
+
+                    jugador1.equipo[contador1] = alakazam;
+                    contador1++;
+                    System.out.println(alakazam.nombre + " aniadido");
+
+                } else if (eleccionJugador1 == 3) {
+
+                    jugador1.equipo[contador1] = marowak;
+                    contador1++;
+                    System.out.println(marowak.nombre + " aniadido");
+
+                } else if (eleccionJugador1 == 4) {
+
+                    jugador1.equipo[contador1] = machamp;
+                    contador1++;
+                    System.out.println(machamp.nombre + " aniadido");
+
+                } else if (eleccionJugador1 == 5) {
+
+                    jugador1.equipo[contador1] = rapidash;
+                    contador1++;
+                    System.out.println(rapidash.nombre + " aniadido");
+
+                } else if (eleccionJugador1 == 6) {
+
+                    jugador1.equipo[contador1] = umbreon;
+                    contador1++;
+                    System.out.println(umbreon.nombre + " aniadido");
+
+                }
+            }
+
+            System.out.println("Elige "+jugador2.usuario);
+            int eleccionJugador2 = scan.nextInt();
+            boolean pokemonEstaElegido = false;
+
+            if (contador2 != 2) {
+
+                if (eleccionJugador2 == 1) {
+
+                    jugador2.equipo[contador2] = pikachu;
+                    contador2++;
+
+                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+
+
+                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+
+                            pokemonEstaElegido = true;
+                            contador2--;
+                            break;
+
+                        }
+
+                    }
+
+                    if (pokemonEstaElegido) {
+
+                        System.out.println(pikachu.nombre + "ya ha sido elegido por " + jugador1.usuario);
+
+                    } else {
+
+                        System.out.println(pikachu.nombre + "se ha unido a tu equipo");
+
+                    }
+
+
+                } else if (eleccionJugador2 == 2) {
+
+                    jugador2.equipo[contador2] = alakazam;
+                    contador2++;
+
+                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+
+                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+
+                            pokemonEstaElegido = true;
+                            contador2--;
+                            break;
+
+                        }
+
+                    }
+
+                    if (pokemonEstaElegido) {
+
+                        System.out.println(alakazam.nombre + "ya ha sido elegido por " + jugador1.usuario);
+
+                    } else {
+
+                        System.out.println(alakazam.nombre + "se ha unido a tu equipo");
+
+                    }
+
+
+                } else if (eleccionJugador2 == 3) {
+
+                    jugador2.equipo[contador2] = marowak;
+                    contador2++;
+
+                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+
+                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+
+                            pokemonEstaElegido = true;
+                            contador2--;
+                            break;
+
+                        }
+
+                    }
+                    if (pokemonEstaElegido) {
+
+                        System.out.println(marowak.nombre + "ya ha sido elegido por " + jugador1.usuario);
+
+                    } else {
+
+                        System.out.println(marowak.nombre + "se ha unido a tu equipo");
+
+                    }
+
+
+                } else if (eleccionJugador2 == 4) {
+
+                    jugador2.equipo[contador2] = machamp;
+                    contador2++;
+
+                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+
+                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+
+                            pokemonEstaElegido = true;
+                            contador2--;
+                            break;
+
+                        }
+
+                    }
+                    if (pokemonEstaElegido) {
+
+                        System.out.println(machamp.nombre + "ya ha sido elegido por " + jugador1.usuario);
+
+                    } else {
+
+                        System.out.println(machamp.nombre + "se ha unido a tu equipo");
+
+                    }
+
+
+                } else if (eleccionJugador2 == 5) {
+
+                    jugador2.equipo[contador2] = rapidash;
+                    contador2++;
+
+                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+
+                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+
+                            pokemonEstaElegido = true;
+                            contador2--;
+                            break;
+
+                        }
+
+                    }
+                    if (pokemonEstaElegido) {
+
+                        System.out.println(rapidash.nombre + "ya ha sido elegido por " + jugador1.usuario);
+
+                    } else {
+
+                        System.out.println(rapidash.nombre + "se ha unido a tu equipo");
+
+                    }
+
+
+                } else if (eleccionJugador2 == 6) {
+
+                    jugador2.equipo[contador2] = umbreon;
+                    contador2++;
+
+                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+
+                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+
+                            pokemonEstaElegido = true;
+                            contador2--;
+                            break;
+
+                        }
+
+                    }
+                    if (pokemonEstaElegido) {
+
+                        System.out.println(umbreon.nombre + "ya ha sido elegido por " + jugador1.usuario);
+
+                    } else {
+
+                        System.out.println(umbreon.nombre + "se ha unido a tu equipo");
+
+                    }
+                }
+            }
+
+
+
+
+
+        } while (contador1 == 2 && contador2 == 2);
+
+
+
+
+
+
+
+
+
 
 
 
