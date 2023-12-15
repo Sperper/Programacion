@@ -198,6 +198,7 @@ public class Main {
 
                             pokemonEstaElegido = true;
                             contador2--;
+                            pokemonsElegidos--;
                             break;
 
                         }
@@ -226,6 +227,7 @@ public class Main {
 
                             pokemonEstaElegido = true;
                             contador2--;
+                            pokemonsElegidos--;
                             break;
 
                         }
@@ -234,11 +236,11 @@ public class Main {
 
                     if (pokemonEstaElegido) {
 
-                        System.out.println(alakazam.nombre + "ya ha sido elegido por " + jugador1.usuario);
+                        System.out.println(alakazam.nombre + " ya ha sido elegido por " + jugador1.usuario);
 
                     } else {
 
-                        System.out.println(alakazam.nombre + "se ha unido a tu equipo");
+                        System.out.println(alakazam.nombre + " se ha unido a tu equipo");
 
                     }
 
@@ -253,6 +255,7 @@ public class Main {
                         if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
 
                             pokemonEstaElegido = true;
+                            pokemonsElegidos--;
                             contador2--;
                             break;
 
@@ -280,6 +283,7 @@ public class Main {
                         if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
 
                             pokemonEstaElegido = true;
+                            pokemonsElegidos --;
                             contador2--;
                             break;
 
@@ -307,6 +311,7 @@ public class Main {
                         if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
 
                             pokemonEstaElegido = true;
+                            pokemonsElegidos--;
                             contador2--;
                             break;
 
@@ -334,6 +339,7 @@ public class Main {
                         if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
 
                             pokemonEstaElegido = true;
+                            pokemonsElegidos--;
                             contador2--;
                             break;
 
@@ -352,11 +358,11 @@ public class Main {
                 }
             }
 
+            pokemonsElegidos ++;
 
 
 
-
-        } while (contador1 == 2 && contador2 == 2);
+        } while (pokemonsElegidos != 3);
 
 
 
