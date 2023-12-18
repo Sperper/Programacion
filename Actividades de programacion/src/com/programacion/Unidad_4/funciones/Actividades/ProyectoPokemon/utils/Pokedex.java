@@ -1,11 +1,11 @@
 package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.utils;
 
-import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Tipo;
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases.Tipo;
 
 public class Pokedex {
 
     private static String[] tiposAceptados = {"Acero", "Agua", "Bicho", "Dragon", "Electrico", "Fantasma",
-        "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"};
+            "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"};
 
     //**************************************************************************
     //**************************CONSTRUCTORES DE CLASE**************************
@@ -40,9 +40,7 @@ public class Pokedex {
 
 
     /**
-     *
      * @param tipoAtaque tipo del ataque
-     * @param tipoRecibeAtaque tipo que recibe el ataque
      * @return (double) modificador del danio del ataque (1.5 muy efectivo, 1 normal, 0.5 poco efectivo, 0 inmune)
      */
     public static double checkEfectividad(Tipo tipoAtaque, Tipo tipoRecibeAtaque) {
@@ -90,7 +88,7 @@ public class Pokedex {
 
             }
 
-            } else  if (tipoAtaque.nombre.equalsIgnoreCase("agua")){
+        } else  if (tipoAtaque.nombre.equalsIgnoreCase("agua")){
 
             if (tipoRecibeAtaque.nombre.equalsIgnoreCase("fuego") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("tierra")) {
 
@@ -441,4 +439,3 @@ public class Pokedex {
     }
 
 }
-

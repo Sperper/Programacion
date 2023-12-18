@@ -1,4 +1,7 @@
-package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases;
+package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases;
+
+
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.utils.Pokedex;
 
 public class Pokemon {
 
@@ -6,11 +9,11 @@ public class Pokemon {
     //*********************ATRIBUTOS DE CLASE************************
     //***************************************************************
 
-   public String nombre;
-   public String lore;
-   public Tipo tipo;
-   public double vida;
-   public Ataque[] ataques = new Ataque[4];
+    public String nombre;
+    public String lore;
+    public Tipo tipo;
+    public double vida;
+    public Ataque[] ataques = new Ataque[4];
 
     //***************************************************************
     //*********************CONSTRUCTORES DE CLASE********************
@@ -33,8 +36,12 @@ public class Pokemon {
 
     public void RecibirAtaque(Ataque ataque){
 
-        this.vida-=ataque.danio;
+        this.vida = this.vida - (ataque.danio * Pokedex.checkEfectividad(ataque.tipo, this.tipo));
         System.out.println("Vida restante de "+this.nombre+": "+this.vida);
 
+
     }
+
+
+
 }

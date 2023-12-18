@@ -1,9 +1,7 @@
-package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases;
+package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases;
+
 
 import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.utils.Pokedex;
-
-import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Ataque;
-
 
 public class Tipo {
 
@@ -33,4 +31,5 @@ public class Tipo {
         }
 
     }
+
 }

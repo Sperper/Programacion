@@ -1,12 +1,11 @@
 package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon;
 
 
-import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Ataque;
-import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Jugador;
-import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Pokemon;
-import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases.Tipo;
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases.Ataque;
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases.Jugador;
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases.Pokemon;
+import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases.Tipo;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -126,8 +125,6 @@ public class Main {
         do {
 
 
-
-
             System.out.println("1. Pikachu");
             System.out.println("2. Alakazam");
             System.out.println("3. Marowak");
@@ -136,10 +133,10 @@ public class Main {
             System.out.println("6. Umbreom");
 
 
-            System.out.println("Elige "+jugador1.usuario);
+            System.out.println("Elige " + jugador1.usuario);
             int eleccionJugador1 = scan.nextInt();
 
-            if (contador1 != 2) {
+            if (contador1 <= 2) {
 
                 if (eleccionJugador1 == 1) {
 
@@ -180,21 +177,21 @@ public class Main {
                 }
             }
 
-            System.out.println("Elige "+jugador2.usuario);
+            System.out.println("Elige " + jugador2.usuario);
             int eleccionJugador2 = scan.nextInt();
             boolean pokemonEstaElegido = false;
 
-            if (contador2 != 2) {
+            if (contador2 <= 2) {
 
                 if (eleccionJugador2 == 1) {
 
                     jugador2.equipo[contador2] = pikachu;
                     contador2++;
 
-                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
 
 
-                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+                        if (jugador1.equipo[i] == pikachu) {
 
                             pokemonEstaElegido = true;
                             contador2--;
@@ -207,11 +204,11 @@ public class Main {
 
                     if (pokemonEstaElegido) {
 
-                        System.out.println(pikachu.nombre + "ya ha sido elegido por " + jugador1.usuario);
+                        System.out.println(pikachu.nombre + " ya ha sido elegido por " + jugador1.usuario);
 
                     } else {
 
-                        System.out.println(pikachu.nombre + "se ha unido a tu equipo");
+                        System.out.println(pikachu.nombre + " se ha unido a tu equipo");
 
                     }
 
@@ -221,9 +218,9 @@ public class Main {
                     jugador2.equipo[contador2] = alakazam;
                     contador2++;
 
-                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
 
-                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+                        if (jugador1.equipo[i] == alakazam) {
 
                             pokemonEstaElegido = true;
                             contador2--;
@@ -250,9 +247,9 @@ public class Main {
                     jugador2.equipo[contador2] = marowak;
                     contador2++;
 
-                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
 
-                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+                        if (jugador1.equipo[i] == marowak) {
 
                             pokemonEstaElegido = true;
                             pokemonsElegidos--;
@@ -264,11 +261,11 @@ public class Main {
                     }
                     if (pokemonEstaElegido) {
 
-                        System.out.println(marowak.nombre + "ya ha sido elegido por " + jugador1.usuario);
+                        System.out.println(marowak.nombre + " ya ha sido elegido por " + jugador1.usuario);
 
                     } else {
 
-                        System.out.println(marowak.nombre + "se ha unido a tu equipo");
+                        System.out.println(marowak.nombre + " se ha unido a tu equipo");
 
                     }
 
@@ -278,37 +275,9 @@ public class Main {
                     jugador2.equipo[contador2] = machamp;
                     contador2++;
 
-                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
 
-                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
-
-                            pokemonEstaElegido = true;
-                            pokemonsElegidos --;
-                            contador2--;
-                            break;
-
-                        }
-
-                    }
-                    if (pokemonEstaElegido) {
-
-                        System.out.println(machamp.nombre + "ya ha sido elegido por " + jugador1.usuario);
-
-                    } else {
-
-                        System.out.println(machamp.nombre + "se ha unido a tu equipo");
-
-                    }
-
-
-                } else if (eleccionJugador2 == 5) {
-
-                    jugador2.equipo[contador2] = rapidash;
-                    contador2++;
-
-                    for (int i = 0; i <= jugador1.equipo.length; i++) {
-
-                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+                        if (jugador1.equipo[i] == machamp) {
 
                             pokemonEstaElegido = true;
                             pokemonsElegidos--;
@@ -320,11 +289,39 @@ public class Main {
                     }
                     if (pokemonEstaElegido) {
 
-                        System.out.println(rapidash.nombre + "ya ha sido elegido por " + jugador1.usuario);
+                        System.out.println(machamp.nombre + " ya ha sido elegido por " + jugador1.usuario);
 
                     } else {
 
-                        System.out.println(rapidash.nombre + "se ha unido a tu equipo");
+                        System.out.println(machamp.nombre + " se ha unido a tu equipo");
+
+                    }
+
+
+                } else if (eleccionJugador2 == 5) {
+
+                    jugador2.equipo[contador2] = rapidash;
+                    contador2++;
+
+                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
+
+                        if (jugador1.equipo[i] == rapidash) {
+
+                            pokemonEstaElegido = true;
+                            pokemonsElegidos--;
+                            contador2--;
+                            break;
+
+                        }
+
+                    }
+                    if (pokemonEstaElegido) {
+
+                        System.out.println(rapidash.nombre + " ya ha sido elegido por " + jugador1.usuario);
+
+                    } else {
+
+                        System.out.println(rapidash.nombre + " se ha unido a tu equipo");
 
                     }
 
@@ -334,9 +331,9 @@ public class Main {
                     jugador2.equipo[contador2] = umbreon;
                     contador2++;
 
-                    for (int i = 0; i <= jugador1.equipo.length; i++) {
+                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
 
-                        if (jugador1.equipo[i] == jugador2.equipo[contador2]) {
+                        if (jugador1.equipo[i] == umbreon) {
 
                             pokemonEstaElegido = true;
                             pokemonsElegidos--;
@@ -358,39 +355,177 @@ public class Main {
                 }
             }
 
-            pokemonsElegidos ++;
-
+            pokemonsElegidos++;
 
 
         } while (pokemonsElegidos != 3);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("Comienza el combate");
+        int opcAtaque;
+        do {
+            if (jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) {
+                if (jugador1.equipo[0].vida > 0) {
+                    System.out.println("Ataca " + jugador1.usuario);
+                    System.out.println("0. " + jugador1.equipo[0].ataques[0].nombre);
+                    System.out.println("1. " + jugador1.equipo[0].ataques[1].nombre);
+                    System.out.println("2. " + jugador1.equipo[0].ataques[2].nombre);
+                    System.out.println("3. " + jugador1.equipo[0].ataques[3].nombre);
+                    opcAtaque = scan.nextInt();
+                    if (jugador2.equipo[0].vida > 0) {
+                        jugador2.equipo[0].RecibirAtaque(jugador1.equipo[0].ataques[opcAtaque]);
+                        if (jugador2.equipo[0].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                            System.out.println("Adelante " + jugador2.equipo[1].nombre);
+                        }
+                    } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[1].vida > 0) {
+                        jugador2.equipo[1].RecibirAtaque(jugador1.equipo[0].ataques[opcAtaque]);
+                        if (jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                            System.out.println("Pokemon debiltiado");
+                            System.out.println("Adelante " + jugador2.equipo[2].nombre);
+                        }
+                    } else if (jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                        jugador2.equipo[2].RecibirAtaque(jugador1.equipo[0].ataques[opcAtaque]);
+                        if (jugador2.equipo[2].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                        }
+                    }
+                } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida > 0) {
+                    System.out.println("Ataca " + jugador1.usuario);
+                    System.out.println("0. " + jugador1.equipo[1].ataques[0].nombre);
+                    System.out.println("1. " + jugador1.equipo[1].ataques[1].nombre);
+                    System.out.println("2. " + jugador1.equipo[1].ataques[2].nombre);
+                    System.out.println("3. " + jugador1.equipo[1].ataques[3].nombre);
+                    opcAtaque = scan.nextInt();
+                    if (jugador2.equipo[0].vida > 0) {
+                        jugador2.equipo[0].RecibirAtaque(jugador1.equipo[1].ataques[opcAtaque]);
+                        if (jugador2.equipo[0].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                            System.out.println("Adelante " + jugador2.equipo[1].nombre);
+                        }
+                    } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[1].vida > 0) {
+                        jugador2.equipo[1].RecibirAtaque(jugador1.equipo[1].ataques[opcAtaque]);
+                        if (jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                            System.out.println("Pokemon debiltiado");
+                            System.out.println("Adelante " + jugador2.equipo[2].nombre);
+                        }
+                    } else if (jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                        jugador2.equipo[2].RecibirAtaque(jugador1.equipo[1].ataques[opcAtaque]);
+                        if (jugador2.equipo[2].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                        }
+                    }
+                } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                    System.out.println("Ataca " + jugador1.usuario);
+                    System.out.println("0. " + jugador1.equipo[2].ataques[0].nombre);
+                    System.out.println("1. " + jugador1.equipo[2].ataques[1].nombre);
+                    System.out.println("2. " + jugador1.equipo[2].ataques[2].nombre);
+                    System.out.println("3. " + jugador1.equipo[2].ataques[3].nombre);
+                    opcAtaque = scan.nextInt();
+                    if (jugador2.equipo[0].vida > 0) {
+                        jugador2.equipo[0].RecibirAtaque(jugador1.equipo[0].ataques[opcAtaque]);
+                        if (jugador2.equipo[0].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                            System.out.println("Adelante " + jugador2.equipo[1].nombre);
+                        }
+                    } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[1].vida > 0) {
+                        jugador2.equipo[1].RecibirAtaque(jugador1.equipo[1].ataques[opcAtaque]);
+                        if (jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                            System.out.println("Pokemon debiltiado");
+                            System.out.println("Adelante " + jugador2.equipo[2].nombre);
+                        }
+                    } else if (jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                        jugador2.equipo[2].RecibirAtaque(jugador1.equipo[2].ataques[opcAtaque]);
+                        if (jugador2.equipo[2].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                        }
+                    }
+                }
+            }
+            if ((jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) && (jugador2.equipo[0].vida > 0 || jugador2.equipo[1].vida > 0 || jugador2.equipo[2].vida > 0)) {
+                if (jugador2.equipo[0].vida > 0) {
+                    System.out.println("Ataca " + jugador2.usuario);
+                    System.out.println("0. " + jugador2.equipo[0].ataques[0].nombre);
+                    System.out.println("1. " + jugador2.equipo[0].ataques[1].nombre);
+                    System.out.println("2. " + jugador2.equipo[0].ataques[2].nombre);
+                    System.out.println("3. " + jugador2.equipo[0].ataques[3].nombre);
+                    opcAtaque = scan.nextInt();
+                    if (jugador1.equipo[0].vida > 0) {
+                        jugador1.equipo[0].RecibirAtaque(jugador2.equipo[0].ataques[opcAtaque]);
+                        if (jugador1.equipo[0].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                            System.out.println("Adelante " + jugador1.equipo[1].nombre);
+                        }
+                    } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida > 0) {
+                        jugador1.equipo[1].RecibirAtaque(jugador2.equipo[0].ataques[opcAtaque]);
+                        if (jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                            System.out.println("Pokemon debiltiado");
+                            System.out.println("Adelante " + jugador1.equipo[2].nombre);
+                        }
+                    } else if (jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                        jugador1.equipo[2].RecibirAtaque(jugador2.equipo[0].ataques[opcAtaque]);
+                        if (jugador1.equipo[2].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                        }
+                    }
+                } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[1].vida > 0) {
+                    System.out.println("Ataca " + jugador2.usuario);
+                    System.out.println("0. " + jugador2.equipo[1].ataques[0].nombre);
+                    System.out.println("1. " + jugador2.equipo[1].ataques[1].nombre);
+                    System.out.println("2. " + jugador2.equipo[1].ataques[2].nombre);
+                    System.out.println("3. " + jugador2.equipo[1].ataques[3].nombre);
+                    opcAtaque = scan.nextInt();
+                    if (jugador1.equipo[0].vida > 0) {
+                        jugador1.equipo[0].RecibirAtaque(jugador2.equipo[1].ataques[opcAtaque]);
+                        if (jugador1.equipo[0].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                            System.out.println("Adelante " + jugador1.equipo[1].nombre);
+                        }
+                    } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida > 0) {
+                        jugador1.equipo[1].RecibirAtaque(jugador2.equipo[1].ataques[opcAtaque]);
+                        if (jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                            System.out.println("Pokemon debiltiado");
+                            System.out.println("Adelante " + jugador1.equipo[2].nombre);
+                        }
+                    } else if (jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                        jugador1.equipo[2].RecibirAtaque(jugador2.equipo[1].ataques[opcAtaque]);
+                        if (jugador1.equipo[2].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                        }
+                    }
+                } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                    System.out.println("Ataca " + jugador2.usuario);
+                    System.out.println("0. " + jugador2.equipo[2].ataques[0].nombre);
+                    System.out.println("1. " + jugador2.equipo[2].ataques[1].nombre);
+                    System.out.println("2. " + jugador2.equipo[2].ataques[2].nombre);
+                    System.out.println("3. " + jugador2.equipo[2].ataques[3].nombre);
+                    opcAtaque = scan.nextInt();
+                    if (jugador1.equipo[0].vida > 0) {
+                        jugador1.equipo[0].RecibirAtaque(jugador2.equipo[2].ataques[opcAtaque]);
+                        if (jugador1.equipo[0].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                            System.out.println("Adelante " + jugador1.equipo[1].nombre);
+                        }
+                    } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida > 0) {
+                        jugador1.equipo[1].RecibirAtaque(jugador2.equipo[2].ataques[opcAtaque]);
+                        if (jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                            System.out.println("Pokemon debiltiado");
+                            System.out.println("Adelante " + jugador1.equipo[2].nombre);
+                        }
+                    } else if (jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                        jugador1.equipo[2].RecibirAtaque(jugador2.equipo[2].ataques[opcAtaque]);
+                        if (jugador1.equipo[2].vida <= 0) {
+                            System.out.println("Pokemon debilitado");
+                        }
+                    }
+                }
+            }
+            if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida <= 0) {
+                System.out.println("Todos los pokemons de " + jugador1.usuario + " han sido debilitados");
+                System.out.println(jugador2 + " ha ganado el combate");
+            } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida <= 0) {
+                System.out.println("Todos los pokemons de " + jugador2.usuario + " han sido debilitados");
+                System.out.println(jugador1 + " ha ganado el combate");
+            }
+        } while ((jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) && (jugador2.equipo[0].vida > 0 || jugador2.equipo[1].vida > 0 || jugador2.equipo[2].vida > 0));
     }
-
 }

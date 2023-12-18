@@ -1,10 +1,7 @@
-package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.clases;
+package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases;
 
 public class Ataque {
 
-    //***************************************************************
-    //*********************ATRIBUTOS DE CLASE************************
-    //***************************************************************
     public String nombre;
     public Tipo tipo;
     public double danio;
