@@ -8,12 +8,20 @@ import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases.Ti
 
 import java.util.Scanner;
 
+/**
+ * Clase main
+ */
 public class Main {
-
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-
+        Scanner scan = new Scanner(System.in); // Objeto escaner para que lea el teclado
+        /*
+        Se inicializan los tipos
+         */
         Tipo dragon = new Tipo("Dragon");
         Tipo veneno = new Tipo("Veneno");
         Tipo agua = new Tipo("Agua");
@@ -33,7 +41,9 @@ public class Main {
         Tipo tierra = new Tipo("Tierra");
         Tipo bicho = new Tipo("Bicho");
 
-
+        /*
+        Se inicializan los pokemons junto con sus ataques
+         */
         Pokemon pikachu = new Pokemon("Pikachu", 200.00, electrico);
 
         Ataque chispa = new Ataque("Chispa", electrico, 65);
@@ -111,18 +121,18 @@ public class Main {
         umbreon.ataques[3] = persecucion;
 
         System.out.println("Introduzca el usuario del jugador 1: ");
-        String usuario1 = scan.next();
-        Jugador jugador1 = new Jugador(usuario1);
+        String usuario1 = scan.next(); // Lee el usuario por teclado
+        Jugador jugador1 = new Jugador(usuario1); // Inicializa jugador 1 y se le asigna el usuario 1
 
         System.out.println("Introduzca el usuario del jugador 2: ");
-        String usuario2 = scan.next();
-        Jugador jugador2 = new Jugador(usuario2);
+        String usuario2 = scan.next(); // Lee el usuario 2 introducido por teclado
+        Jugador jugador2 = new Jugador(usuario2); // Inicializa jugador 2 y se le asigna el usuario 2
 
-        int contador1 = 0;
-        int contador2 = 0;
-        int pokemonsElegidos = 0;
+        int contador1 = 0; // Contador que sirve para asignar los pokemons a un espacio del array del equipo del jugador especifico
+        int contador2 = 0; // Contador que sire para asignar los pokemons a un espacio del array del equipo del jugador 2 especifico
+        int pokemonsElegidos = 0; // Contador que sirve para que el bucle de un número de vueltas específico
 
-        do {
+        do { // Bucle para la seleccion de los pokemons
 
 
             System.out.println("1. Pikachu");
@@ -134,9 +144,9 @@ public class Main {
 
 
             System.out.println("Elige " + jugador1.usuario);
-            int eleccionJugador1 = scan.nextInt();
+            int eleccionJugador1 = scan.nextInt(); // selecciona el pokemon
 
-            if (contador1 <= 2) {
+            if (contador1 <= 2) { // if para que se le añada el pokemon al jugador 1
 
                 if (eleccionJugador1 == 1) {
 
@@ -178,17 +188,17 @@ public class Main {
             }
 
             System.out.println("Elige " + jugador2.usuario);
-            int eleccionJugador2 = scan.nextInt();
-            boolean pokemonEstaElegido = false;
+            int eleccionJugador2 = scan.nextInt(); // Elige pokemon dependiendo del numero introducido por teclado
+            boolean pokemonEstaElegido = false; // boolean que mira si el pokemon ya está elegido por el jugador 1
 
-            if (contador2 <= 2) {
+            if (contador2 <= 2) { // if que asigna el pokemon al jugador 2
 
                 if (eleccionJugador2 == 1) {
 
                     jugador2.equipo[contador2] = pikachu;
                     contador2++;
 
-                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
+                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) { // for para comprobar si el pokemon esta elegido
 
 
                         if (jugador1.equipo[i] == pikachu) {
@@ -202,7 +212,7 @@ public class Main {
 
                     }
 
-                    if (pokemonEstaElegido) {
+                    if (pokemonEstaElegido) { // if para que muestre un mensaje por pantalla dependiendo de si el jugador esta elegido o no
 
                         System.out.println(pikachu.nombre + " ya ha sido elegido por " + jugador1.usuario);
 
@@ -361,17 +371,17 @@ public class Main {
         } while (pokemonsElegidos != 3);
 
         System.out.println("Comienza el combate");
-        int opcAtaque;
-        do {
-            if (jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) {
+        int opcAtaque; // opc del ataque que se va a seleccionar
+        do { // bucle do-while para realizar el combate
+            if (jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) { //if para que ataque el jugador 1
                 if (jugador1.equipo[0].vida > 0) {
                     System.out.println("Ataca " + jugador1.usuario);
                     System.out.println("0. " + jugador1.equipo[0].ataques[0].nombre);
                     System.out.println("1. " + jugador1.equipo[0].ataques[1].nombre);
                     System.out.println("2. " + jugador1.equipo[0].ataques[2].nombre);
                     System.out.println("3. " + jugador1.equipo[0].ataques[3].nombre);
-                    opcAtaque = scan.nextInt();
-                    if (jugador2.equipo[0].vida > 0) {
+                    opcAtaque = scan.nextInt(); // lee la opcion que se ha introducido por el teclado
+                    if (jugador2.equipo[0].vida > 0) { // if que revisa que pokemon del jugador 2 tiene que recibir el ataque
                         jugador2.equipo[0].RecibirAtaque(jugador1.equipo[0].ataques[opcAtaque]);
                         if (jugador2.equipo[0].vida <= 0) {
                             System.out.println("Pokemon debilitado");
@@ -441,7 +451,7 @@ public class Main {
                     }
                 }
             }
-            if ((jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) && (jugador2.equipo[0].vida > 0 || jugador2.equipo[1].vida > 0 || jugador2.equipo[2].vida > 0)) {
+            if ((jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) && (jugador2.equipo[0].vida > 0 || jugador2.equipo[1].vida > 0 || jugador2.equipo[2].vida > 0)) { // if para que ataque el jugador 2
                 if (jugador2.equipo[0].vida > 0) {
                     System.out.println("Ataca " + jugador2.usuario);
                     System.out.println("0. " + jugador2.equipo[0].ataques[0].nombre);
@@ -449,7 +459,7 @@ public class Main {
                     System.out.println("2. " + jugador2.equipo[0].ataques[2].nombre);
                     System.out.println("3. " + jugador2.equipo[0].ataques[3].nombre);
                     opcAtaque = scan.nextInt();
-                    if (jugador1.equipo[0].vida > 0) {
+                    if (jugador1.equipo[0].vida > 0) { // if que revisa que pokemon del jugador 1 recibe el ataque
                         jugador1.equipo[0].RecibirAtaque(jugador2.equipo[0].ataques[opcAtaque]);
                         if (jugador1.equipo[0].vida <= 0) {
                             System.out.println("Pokemon debilitado");
@@ -519,13 +529,13 @@ public class Main {
                     }
                 }
             }
-            if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida <= 0) {
+            if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida <= 0) { // if para que muestre que jugador ha ganado dependiendo del equipo que no tenga vida
                 System.out.println("Todos los pokemons de " + jugador1.usuario + " han sido debilitados");
                 System.out.println(jugador2 + " ha ganado el combate");
             } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida <= 0) {
                 System.out.println("Todos los pokemons de " + jugador2.usuario + " han sido debilitados");
                 System.out.println(jugador1 + " ha ganado el combate");
             }
-        } while ((jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) && (jugador2.equipo[0].vida > 0 || jugador2.equipo[1].vida > 0 || jugador2.equipo[2].vida > 0));
-    }
-}
+        } while ((jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) && (jugador2.equipo[0].vida > 0 || jugador2.equipo[1].vida > 0 || jugador2.equipo[2].vida > 0)); // fin de do-while
+    } // FIN DE MAIN
+} // FIN DE CLASE

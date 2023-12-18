@@ -6,6 +6,12 @@ public class Ataque {
     public Tipo tipo;
     public double danio;
 
+    /**
+     * Metodo para inicializar los ataques
+     * @param nombre que del ataque
+     * @param tipo del ataque de la clase Tipo
+     * @param danio del ataque
+     */
     public Ataque(String nombre, Tipo tipo, double danio) {
 
         // Establece el nombre del ataque

@@ -3,6 +3,7 @@ package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases;
 
 import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.utils.Pokedex;
 
+
 public class Tipo {
 
     //***************************************************************
@@ -13,6 +14,11 @@ public class Tipo {
     //***************************************************************
     //*********************CONSTRUCTORES DE CLASE********************
     //***************************************************************
+
+    /**
+     * Metodo constructor para los tipos
+     * @param nombre del tipo
+     */
     public Tipo(String nombre) {
 
         // Establece el nombre del ataque
@@ -20,7 +26,7 @@ public class Tipo {
         // Si el tipo de ataque existe...
 
 
-        if (Pokedex.checkTipoExiste(nombre)) {
+        if (Pokedex.checkTipoExiste(nombre)) { // if que llama al metodo checkTipoExiste de la clase Pokedex para comprobar si existe el tipo
 
             this.nombre = nombre;
 

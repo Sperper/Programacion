@@ -5,7 +5,7 @@ import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases.Ti
 public class Pokedex {
 
     private static String[] tiposAceptados = {"Acero", "Agua", "Bicho", "Dragon", "Electrico", "Fantasma",
-            "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"};
+            "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"}; // Array de strings que almacena los tipos aceptados
 
     //**************************************************************************
     //**************************CONSTRUCTORES DE CLASE**************************
@@ -50,7 +50,7 @@ public class Pokedex {
 
         double efectividad = 0.0;
 
-        if (tipoAtaque.nombre.equalsIgnoreCase("acero")){
+        if (tipoAtaque.nombre.equalsIgnoreCase("acero")){ // if para que la efectivad sea distinta dependiendo del tipo
 
             if (tipoRecibeAtaque.nombre.equalsIgnoreCase("hielo") || tipoRecibeAtaque.nombre.equalsIgnoreCase("roca") || tipoRecibeAtaque.nombre.equalsIgnoreCase("hada")) {
 
