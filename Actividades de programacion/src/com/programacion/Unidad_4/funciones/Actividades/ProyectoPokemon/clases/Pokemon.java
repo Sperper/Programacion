@@ -47,12 +47,15 @@ public class Pokemon {
 
     }
 
+
+    /**
+     * Metodo para mostrar los ataques del pokemon
+     */
     public void mostrarAtaques(){
 
-        System.out.println("0. "+this.ataques[0].nombre);
-        System.out.println("1. "+this.ataques[1].nombre);
-        System.out.println("2. "+this.ataques[2].nombre);
-        System.out.println("3. "+this.ataques[3].nombre);
+        System.out.println(this.nombre);
+        System.out.println("0. "+this.ataques[0].nombre+ "        1. "+this.ataques[1].nombre);
+        System.out.println("2. "+this.ataques[2].nombre+ "        3. "+this.ataques[3].nombre);
 
     }
 

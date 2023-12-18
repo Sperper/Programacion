@@ -1,7 +1,5 @@
 package com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.Clases;
 
-import com.programacion.Unidad_4.funciones.Actividades.ProyectoPokemon.utils.Pokedex;
-
 public class Jugador {
 
     public String usuario;
@@ -18,32 +16,27 @@ public class Jugador {
 
     }
 
-    public boolean comprobarPokemonEquipo(Pokemon pokemon, int contador, int contadorElegido) {
+    /**
+     * Metodo para comprobar si el pokemon ya esta elegido
+     * @param pokemon pokemon que se va a comprobar
+     * @return true --> si el pokemon está elegido --  false --> si el pokemon no está elegido
+     */
+
+    public static boolean comprobarPokemonEquipo(Pokemon pokemon, Pokemon[] equipo) {
 
         boolean pokemonEstaElegido = false;
 
-        for (int i = 0; i <= this.equipo.length -1; i ++) {
+        for (int i = 0; i <= equipo.length -1; i ++) {
 
-            if (this.equipo[i] == pokemon) {
-
+             if (equipo[i] == pokemon) {
                 pokemonEstaElegido = true;
-                contadorElegido --;
-                contador --;
+
                 break;
 
             }
 
         }
 
-        if (pokemonEstaElegido) {
-
-            System.out.println("Este pokemon ya ha sido seleccionado por el otro jugador");
-
-        } else {
-
-            System.out.println(pokemon.nombre + " se ha unido a tu equipo");
-
-        }
 
         return pokemonEstaElegido;
 

@@ -44,7 +44,7 @@ public class Main {
         /*
         Se inicializan los pokemons junto con sus ataques
          */
-        Pokemon pikachu = new Pokemon("Pikachu", 200.00, electrico);
+        Pokemon pikachu = new Pokemon("PIKACHU", 200.00, electrico);
         pikachu.lore = "Pikachu almacena una gran cantidad de electricidad en sus mejillas. Estas parecen cargarse eléctricamente" +
                 "durante la noche mientras dueme. Las mejillas de Pikachu también pueden ser recargadas mediante una descarga electrica";
 
@@ -59,7 +59,7 @@ public class Main {
         pikachu.ataques[3] = ataqueRapido;
 
 
-        Pokemon alakazam = new Pokemon("Alakazam", 200.00, psiquico);
+        Pokemon alakazam = new Pokemon("ALAKAZAM", 200.00, psiquico);
         alakazam.lore = "Alakazam es un Pokemon tipo psiquico, que se caracteriza por un gran poder mental. Posee dos cucharas, " +
                 "una en cada mano, que aumentan sus poderes psiquico. Curiosamente a diferencia a su preevolución Kadabra, " +
                 "Alakazam tiene dos cucharas en vez de una. El cerebro de este Pokemon nunca deja de crecer y el numero de neuronas " +
@@ -76,7 +76,7 @@ public class Main {
         alakazam.ataques[3] = psicocorte;
 
 
-        Pokemon marowak = new Pokemon("Marowak", 200.00, tierra);
+        Pokemon marowak = new Pokemon("MAROWAK", 200.00, tierra);
         marowak.lore = "Tras evolucionar de Cubone, su craneo y la coraza osea que lleva sobre la cabeza se fusionan, formando " +
                 "una nueva coraza mucho mas comoda y resistente que la anterior. Es un Pokemon muy solitario, solo se puede ver " +
                 "a los Marowak en un grupo durante la temporada de apareamiento. Durante este tiempo se los ve embestirse para chocar " +
@@ -93,7 +93,7 @@ public class Main {
         marowak.ataques[3] = golpe;
 
 
-        Pokemon machamp = new Pokemon("Machamp", 200.00, lucha);
+        Pokemon machamp = new Pokemon("MACHAMP", 200.00, lucha);
         machamp.lore = "Es uno de los Pokemon tipo lucha mas fuertes, dominando cualquier tipo de arte marcial; es capaz de dar 1000 golpes " +
                 "en tan solo dos segundos, y si toma al rival por los pies con sus cuatro brazos, lo lanzará lo más lejos posiblle, ganando " +
                 "facilmente un combate.";
@@ -109,7 +109,7 @@ public class Main {
         machamp.ataques[3] = punioDinamico;
 
 
-        Pokemon rapidash = new Pokemon("Rapidash", 200.00, fuego);
+        Pokemon rapidash = new Pokemon("RAPIDASH", 200.00, fuego);
         rapidash.lore = "Este pokemon vive en praderas muy extensas, campos y llanuras y suele ser algo solitario. En cuanto a velocidad se refiere, " +
                 "puede ompetir con Dodrio y su  velocidad oscila entre 200 y 400 km/h, ya que es muy agil, aunque no es " +
                 "el Pokemon mas rapido";
@@ -125,7 +125,7 @@ public class Main {
         rapidash.ataques[3] = megacuerno;
 
 
-        Pokemon umbreon = new Pokemon("Umbreon", 200.00, siniestro);
+        Pokemon umbreon = new Pokemon("UMBREON", 200.00, siniestro);
         umbreon.lore = "Cuando el vinculo afectivo entre Eevee y su entrenador sea lo suficientemente alto, y se acostumbra a " +
                 "entrenar al atardecer o por la noche a Eevee, estará preparado para evolucionar en Umbreon. Este Pokemon " +
                 "tiene todo su pelaje de color negro, exceptuando circunferencias de un color amarillo que puede iluminar a su " +
@@ -174,39 +174,82 @@ public class Main {
 
                     jugador1.equipo[contador1] = pikachu;
                     contador1++;
-                    jugador2.comprobarPokemonEquipo(pikachu, contador1, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(pikachu, jugador2.equipo); // Llama al metido comprobarPokemonEquipo de la clase jugador para comprobar si el pokemon está elegido
+
+                    if (Jugador.comprobarPokemonEquipo(pikachu, jugador2.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(pikachu.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador1 == 2) {
 
                     jugador1.equipo[contador1] = alakazam;
                     contador1++;
-                    jugador2.comprobarPokemonEquipo(alakazam, contador1, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(alakazam, jugador2.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(alakazam, jugador2.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(alakazam.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador1 == 3) {
 
                     jugador1.equipo[contador1] = marowak;
                     contador1++;
-                    jugador2.comprobarPokemonEquipo(marowak, contador1, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(marowak, jugador2.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(marowak, jugador2.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(marowak.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador1 == 4) {
 
                     jugador1.equipo[contador1] = machamp;
                     contador1++;
-                    jugador2.comprobarPokemonEquipo(machamp, contador1, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(machamp, jugador2.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(machamp, jugador2.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(machamp.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador1 == 5) {
 
                     jugador1.equipo[contador1] = rapidash;
                     contador1++;
-                    jugador2.comprobarPokemonEquipo(rapidash, contador1, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(rapidash, jugador2.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(rapidash, jugador2.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(rapidash.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador1 == 6) {
 
                     jugador1.equipo[contador1] = umbreon;
                     contador1++;
-                    jugador2.comprobarPokemonEquipo(umbreon, contador1, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(umbreon, jugador2.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(umbreon, jugador2.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(umbreon.nombre+" se ha unido a tu equipo");
+                    }
 
                 }
+                
             }
 
             if (contador2 <= 2) { // if que asigna el pokemon al jugador 2
@@ -219,40 +262,83 @@ public class Main {
 
                     jugador2.equipo[contador2] = pikachu;
                     contador2++;
-                    jugador1.comprobarPokemonEquipo(pikachu, contador2, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(pikachu, jugador1.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(pikachu, jugador1.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(pikachu.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador2 == 2) {
 
                     jugador2.equipo[contador2] = alakazam;
                     contador2++;
-                    jugador1.comprobarPokemonEquipo(alakazam, contador2, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(alakazam, jugador1.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(alakazam, jugador1.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(alakazam.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador2 == 3) {
 
                     jugador2.equipo[contador2] = marowak;
                     contador2++;
-                    jugador1.comprobarPokemonEquipo(marowak, contador2, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(marowak, jugador1.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(marowak, jugador1.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(marowak.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador2 == 4) {
 
                     jugador2.equipo[contador2] = machamp;
                     contador2++;
-                    jugador1.comprobarPokemonEquipo(machamp, contador2, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(machamp, jugador1.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(machamp, jugador1.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(machamp.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador2 == 5) {
 
                     jugador2.equipo[contador2] = rapidash;
                     contador2++;
-                    jugador1.comprobarPokemonEquipo(rapidash, contador2, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(rapidash, jugador1.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(rapidash, jugador1.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(rapidash.nombre+" se ha unido a tu equipo");
+                    }
 
                 } else if (eleccionJugador2 == 6) {
 
                     jugador2.equipo[contador2] = umbreon;
                     contador2++;
-                    jugador1.comprobarPokemonEquipo(umbreon, contador2, pokemonsElegidos);
+                    Jugador.comprobarPokemonEquipo(umbreon, jugador1.equipo);
+
+                    if (Jugador.comprobarPokemonEquipo(umbreon, jugador1.equipo)) {
+                        pokemonsElegidos --;
+                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                    } else {
+                        System.out.println(umbreon.nombre+" se ha unido a tu equipo");
+                    }
 
                 }
             }
+
 
             pokemonsElegidos++;
 
@@ -288,7 +374,6 @@ public class Main {
                     }
                 } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida > 0) {
                     System.out.println("Ataca " + jugador1.usuario);
-                    System.out.println();
                     jugador1.equipo[1].mostrarAtaques();
                     opcAtaque = scan.nextInt();
                     if (jugador2.equipo[0].vida > 0) {

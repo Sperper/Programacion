@@ -65,7 +65,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -84,7 +84,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -103,7 +103,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -122,7 +122,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -141,7 +141,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -160,7 +160,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -184,7 +184,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -203,7 +203,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -222,7 +222,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -246,7 +246,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -265,7 +265,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -289,7 +289,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -313,7 +313,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -337,7 +337,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -361,7 +361,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -385,7 +385,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -409,7 +409,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
@@ -428,7 +428,7 @@ public class Pokedex {
             } else {
 
                 efectividad = 1;
-                System.out.println("Es efectivo");
+                System.out.println("El ataque ha causado un daño normal");
 
             }
 
