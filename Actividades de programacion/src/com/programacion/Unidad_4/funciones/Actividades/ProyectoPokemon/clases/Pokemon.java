@@ -47,6 +47,15 @@ public class Pokemon {
 
     }
 
+    public void mostrarAtaques(){
+
+        System.out.println("0. "+this.ataques[0].nombre);
+        System.out.println("1. "+this.ataques[1].nombre);
+        System.out.println("2. "+this.ataques[2].nombre);
+        System.out.println("3. "+this.ataques[3].nombre);
+
+    }
+
 
 
 }

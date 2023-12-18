@@ -45,6 +45,8 @@ public class Main {
         Se inicializan los pokemons junto con sus ataques
          */
         Pokemon pikachu = new Pokemon("Pikachu", 200.00, electrico);
+        pikachu.lore = "Pikachu almacena una gran cantidad de electricidad en sus mejillas. Estas parecen cargarse eléctricamente" +
+                "durante la noche mientras dueme. Las mejillas de Pikachu también pueden ser recargadas mediante una descarga electrica";
 
         Ataque chispa = new Ataque("Chispa", electrico, 65);
         Ataque amago = new Ataque("Amago", normal, 30);
@@ -58,6 +60,10 @@ public class Main {
 
 
         Pokemon alakazam = new Pokemon("Alakazam", 200.00, psiquico);
+        alakazam.lore = "Alakazam es un Pokemon tipo psiquico, que se caracteriza por un gran poder mental. Posee dos cucharas, " +
+                "una en cada mano, que aumentan sus poderes psiquico. Curiosamente a diferencia a su preevolución Kadabra, " +
+                "Alakazam tiene dos cucharas en vez de una. El cerebro de este Pokemon nunca deja de crecer y el numero de neuronas " +
+                "nunca deja de aumentar";
 
         Ataque confusion = new Ataque("Confusion", psiquico, 50);
         Ataque psicorrayo = new Ataque("Psicorrayo", psiquico, 65);
@@ -71,6 +77,10 @@ public class Main {
 
 
         Pokemon marowak = new Pokemon("Marowak", 200.00, tierra);
+        marowak.lore = "Tras evolucionar de Cubone, su craneo y la coraza osea que lleva sobre la cabeza se fusionan, formando " +
+                "una nueva coraza mucho mas comoda y resistente que la anterior. Es un Pokemon muy solitario, solo se puede ver " +
+                "a los Marowak en un grupo durante la temporada de apareamiento. Durante este tiempo se los ve embestirse para chocar " +
+                "sus corazas oseas y medir fuerzas";
 
         Ataque huesoPalo = new Ataque("Hueso Palo", tierra, 65);
         Ataque dobleFilo = new Ataque("Doble Filo", normal, 120);
@@ -84,6 +94,9 @@ public class Main {
 
 
         Pokemon machamp = new Pokemon("Machamp", 200.00, lucha);
+        machamp.lore = "Es uno de los Pokemon tipo lucha mas fuertes, dominando cualquier tipo de arte marcial; es capaz de dar 1000 golpes " +
+                "en tan solo dos segundos, y si toma al rival por los pies con sus cuatro brazos, lo lanzará lo más lejos posiblle, ganando " +
+                "facilmente un combate.";
 
         Ataque tajoCruzado = new Ataque("Tajo Cruzado", lucha, 100);
         Ataque golpBis = new Ataque("Golpe Bis", dragon, 40);
@@ -97,6 +110,9 @@ public class Main {
 
 
         Pokemon rapidash = new Pokemon("Rapidash", 200.00, fuego);
+        rapidash.lore = "Este pokemon vive en praderas muy extensas, campos y llanuras y suele ser algo solitario. En cuanto a velocidad se refiere, " +
+                "puede ompetir con Dodrio y su  velocidad oscila entre 200 y 400 km/h, ya que es muy agil, aunque no es " +
+                "el Pokemon mas rapido";
 
         Ataque llamarada = new Ataque("Llamarada", fuego, 110);
         Ataque bote = new Ataque("Bote", volador, 85);
@@ -110,6 +126,10 @@ public class Main {
 
 
         Pokemon umbreon = new Pokemon("Umbreon", 200.00, siniestro);
+        umbreon.lore = "Cuando el vinculo afectivo entre Eevee y su entrenador sea lo suficientemente alto, y se acostumbra a " +
+                "entrenar al atardecer o por la noche a Eevee, estará preparado para evolucionar en Umbreon. Este Pokemon " +
+                "tiene todo su pelaje de color negro, exceptuando circunferencias de un color amarillo que puede iluminar a su " +
+                "voluntad.";
 
         Ataque ultimaBaza = new Ataque("Ultima Baza", normal, 100);
         Ataque finta = new Ataque("Finta", siniestro, 60);
@@ -143,225 +163,94 @@ public class Main {
             System.out.println("6. Umbreom");
 
 
-            System.out.println("Elige " + jugador1.usuario);
-            int eleccionJugador1 = scan.nextInt(); // selecciona el pokemon
+
 
             if (contador1 <= 2) { // if para que se le añada el pokemon al jugador 1
+
+                System.out.println("Elige " + jugador1.usuario);
+                int eleccionJugador1 = scan.nextInt(); // selecciona el pokemon
 
                 if (eleccionJugador1 == 1) {
 
                     jugador1.equipo[contador1] = pikachu;
                     contador1++;
-                    System.out.println(pikachu.nombre + " aniadido");
+                    jugador2.comprobarPokemonEquipo(pikachu, contador1, pokemonsElegidos);
 
                 } else if (eleccionJugador1 == 2) {
 
                     jugador1.equipo[contador1] = alakazam;
                     contador1++;
-                    System.out.println(alakazam.nombre + " aniadido");
+                    jugador2.comprobarPokemonEquipo(alakazam, contador1, pokemonsElegidos);
 
                 } else if (eleccionJugador1 == 3) {
 
                     jugador1.equipo[contador1] = marowak;
                     contador1++;
-                    System.out.println(marowak.nombre + " aniadido");
+                    jugador2.comprobarPokemonEquipo(marowak, contador1, pokemonsElegidos);
 
                 } else if (eleccionJugador1 == 4) {
 
                     jugador1.equipo[contador1] = machamp;
                     contador1++;
-                    System.out.println(machamp.nombre + " aniadido");
+                    jugador2.comprobarPokemonEquipo(machamp, contador1, pokemonsElegidos);
 
                 } else if (eleccionJugador1 == 5) {
 
                     jugador1.equipo[contador1] = rapidash;
                     contador1++;
-                    System.out.println(rapidash.nombre + " aniadido");
+                    jugador2.comprobarPokemonEquipo(rapidash, contador1, pokemonsElegidos);
 
                 } else if (eleccionJugador1 == 6) {
 
                     jugador1.equipo[contador1] = umbreon;
                     contador1++;
-                    System.out.println(umbreon.nombre + " aniadido");
+                    jugador2.comprobarPokemonEquipo(umbreon, contador1, pokemonsElegidos);
 
                 }
             }
 
-            System.out.println("Elige " + jugador2.usuario);
-            int eleccionJugador2 = scan.nextInt(); // Elige pokemon dependiendo del numero introducido por teclado
-            boolean pokemonEstaElegido = false; // boolean que mira si el pokemon ya está elegido por el jugador 1
-
             if (contador2 <= 2) { // if que asigna el pokemon al jugador 2
+
+                System.out.println("Elige " + jugador2.usuario);
+                int eleccionJugador2 = scan.nextInt(); // Elige pokemon dependiendo del numero introducido por teclado
+
 
                 if (eleccionJugador2 == 1) {
 
                     jugador2.equipo[contador2] = pikachu;
                     contador2++;
-
-                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) { // for para comprobar si el pokemon esta elegido
-
-
-                        if (jugador1.equipo[i] == pikachu) {
-
-                            pokemonEstaElegido = true;
-                            contador2--;
-                            pokemonsElegidos--;
-                            break;
-
-                        }
-
-                    }
-
-                    if (pokemonEstaElegido) { // if para que muestre un mensaje por pantalla dependiendo de si el jugador esta elegido o no
-
-                        System.out.println(pikachu.nombre + " ya ha sido elegido por " + jugador1.usuario);
-
-                    } else {
-
-                        System.out.println(pikachu.nombre + " se ha unido a tu equipo");
-
-                    }
-
+                    jugador1.comprobarPokemonEquipo(pikachu, contador2, pokemonsElegidos);
 
                 } else if (eleccionJugador2 == 2) {
 
                     jugador2.equipo[contador2] = alakazam;
                     contador2++;
-
-                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
-
-                        if (jugador1.equipo[i] == alakazam) {
-
-                            pokemonEstaElegido = true;
-                            contador2--;
-                            pokemonsElegidos--;
-                            break;
-
-                        }
-
-                    }
-
-                    if (pokemonEstaElegido) {
-
-                        System.out.println(alakazam.nombre + " ya ha sido elegido por " + jugador1.usuario);
-
-                    } else {
-
-                        System.out.println(alakazam.nombre + " se ha unido a tu equipo");
-
-                    }
-
+                    jugador1.comprobarPokemonEquipo(alakazam, contador2, pokemonsElegidos);
 
                 } else if (eleccionJugador2 == 3) {
 
                     jugador2.equipo[contador2] = marowak;
                     contador2++;
-
-                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
-
-                        if (jugador1.equipo[i] == marowak) {
-
-                            pokemonEstaElegido = true;
-                            pokemonsElegidos--;
-                            contador2--;
-                            break;
-
-                        }
-
-                    }
-                    if (pokemonEstaElegido) {
-
-                        System.out.println(marowak.nombre + " ya ha sido elegido por " + jugador1.usuario);
-
-                    } else {
-
-                        System.out.println(marowak.nombre + " se ha unido a tu equipo");
-
-                    }
-
+                    jugador1.comprobarPokemonEquipo(marowak, contador2, pokemonsElegidos);
 
                 } else if (eleccionJugador2 == 4) {
 
                     jugador2.equipo[contador2] = machamp;
                     contador2++;
-
-                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
-
-                        if (jugador1.equipo[i] == machamp) {
-
-                            pokemonEstaElegido = true;
-                            pokemonsElegidos--;
-                            contador2--;
-                            break;
-
-                        }
-
-                    }
-                    if (pokemonEstaElegido) {
-
-                        System.out.println(machamp.nombre + " ya ha sido elegido por " + jugador1.usuario);
-
-                    } else {
-
-                        System.out.println(machamp.nombre + " se ha unido a tu equipo");
-
-                    }
-
+                    jugador1.comprobarPokemonEquipo(machamp, contador2, pokemonsElegidos);
 
                 } else if (eleccionJugador2 == 5) {
 
                     jugador2.equipo[contador2] = rapidash;
                     contador2++;
-
-                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
-
-                        if (jugador1.equipo[i] == rapidash) {
-
-                            pokemonEstaElegido = true;
-                            pokemonsElegidos--;
-                            contador2--;
-                            break;
-
-                        }
-
-                    }
-                    if (pokemonEstaElegido) {
-
-                        System.out.println(rapidash.nombre + " ya ha sido elegido por " + jugador1.usuario);
-
-                    } else {
-
-                        System.out.println(rapidash.nombre + " se ha unido a tu equipo");
-
-                    }
-
+                    jugador1.comprobarPokemonEquipo(rapidash, contador2, pokemonsElegidos);
 
                 } else if (eleccionJugador2 == 6) {
 
                     jugador2.equipo[contador2] = umbreon;
                     contador2++;
+                    jugador1.comprobarPokemonEquipo(umbreon, contador2, pokemonsElegidos);
 
-                    for (int i = 0; i <= jugador1.equipo.length - 1; i++) {
-
-                        if (jugador1.equipo[i] == umbreon) {
-
-                            pokemonEstaElegido = true;
-                            pokemonsElegidos--;
-                            contador2--;
-                            break;
-
-                        }
-
-                    }
-                    if (pokemonEstaElegido) {
-
-                        System.out.println(umbreon.nombre + "ya ha sido elegido por " + jugador1.usuario);
-
-                    } else {
-
-                        System.out.println(umbreon.nombre + "se ha unido a tu equipo");
-
-                    }
                 }
             }
 
@@ -376,10 +265,8 @@ public class Main {
             if (jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) { //if para que ataque el jugador 1
                 if (jugador1.equipo[0].vida > 0) {
                     System.out.println("Ataca " + jugador1.usuario);
-                    System.out.println("0. " + jugador1.equipo[0].ataques[0].nombre);
-                    System.out.println("1. " + jugador1.equipo[0].ataques[1].nombre);
-                    System.out.println("2. " + jugador1.equipo[0].ataques[2].nombre);
-                    System.out.println("3. " + jugador1.equipo[0].ataques[3].nombre);
+                    jugador1.equipo[0].mostrarAtaques();
+
                     opcAtaque = scan.nextInt(); // lee la opcion que se ha introducido por el teclado
                     if (jugador2.equipo[0].vida > 0) { // if que revisa que pokemon del jugador 2 tiene que recibir el ataque
                         jugador2.equipo[0].RecibirAtaque(jugador1.equipo[0].ataques[opcAtaque]);
@@ -401,10 +288,8 @@ public class Main {
                     }
                 } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[1].vida > 0) {
                     System.out.println("Ataca " + jugador1.usuario);
-                    System.out.println("0. " + jugador1.equipo[1].ataques[0].nombre);
-                    System.out.println("1. " + jugador1.equipo[1].ataques[1].nombre);
-                    System.out.println("2. " + jugador1.equipo[1].ataques[2].nombre);
-                    System.out.println("3. " + jugador1.equipo[1].ataques[3].nombre);
+                    System.out.println();
+                    jugador1.equipo[1].mostrarAtaques();
                     opcAtaque = scan.nextInt();
                     if (jugador2.equipo[0].vida > 0) {
                         jugador2.equipo[0].RecibirAtaque(jugador1.equipo[1].ataques[opcAtaque]);
@@ -424,13 +309,11 @@ public class Main {
                             System.out.println("Pokemon debilitado");
                         }
                     }
-                } else if (jugador1.equipo[0].vida <= 0 && jugador1.equipo[2].vida > 0) {
+                } else if (jugador1.equipo[1].vida <= 0 && jugador1.equipo[2].vida > 0) {
                     System.out.println("Ataca " + jugador1.usuario);
-                    System.out.println("0. " + jugador1.equipo[2].ataques[0].nombre);
-                    System.out.println("1. " + jugador1.equipo[2].ataques[1].nombre);
-                    System.out.println("2. " + jugador1.equipo[2].ataques[2].nombre);
-                    System.out.println("3. " + jugador1.equipo[2].ataques[3].nombre);
+                    jugador1.equipo[2].mostrarAtaques();
                     opcAtaque = scan.nextInt();
+
                     if (jugador2.equipo[0].vida > 0) {
                         jugador2.equipo[0].RecibirAtaque(jugador1.equipo[0].ataques[opcAtaque]);
                         if (jugador2.equipo[0].vida <= 0) {
@@ -454,11 +337,9 @@ public class Main {
             if ((jugador1.equipo[0].vida > 0 || jugador1.equipo[1].vida > 0 || jugador1.equipo[2].vida > 0) && (jugador2.equipo[0].vida > 0 || jugador2.equipo[1].vida > 0 || jugador2.equipo[2].vida > 0)) { // if para que ataque el jugador 2
                 if (jugador2.equipo[0].vida > 0) {
                     System.out.println("Ataca " + jugador2.usuario);
-                    System.out.println("0. " + jugador2.equipo[0].ataques[0].nombre);
-                    System.out.println("1. " + jugador2.equipo[0].ataques[1].nombre);
-                    System.out.println("2. " + jugador2.equipo[0].ataques[2].nombre);
-                    System.out.println("3. " + jugador2.equipo[0].ataques[3].nombre);
+                    jugador2.equipo[0].mostrarAtaques();
                     opcAtaque = scan.nextInt();
+
                     if (jugador1.equipo[0].vida > 0) { // if que revisa que pokemon del jugador 1 recibe el ataque
                         jugador1.equipo[0].RecibirAtaque(jugador2.equipo[0].ataques[opcAtaque]);
                         if (jugador1.equipo[0].vida <= 0) {
@@ -479,11 +360,9 @@ public class Main {
                     }
                 } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[1].vida > 0) {
                     System.out.println("Ataca " + jugador2.usuario);
-                    System.out.println("0. " + jugador2.equipo[1].ataques[0].nombre);
-                    System.out.println("1. " + jugador2.equipo[1].ataques[1].nombre);
-                    System.out.println("2. " + jugador2.equipo[1].ataques[2].nombre);
-                    System.out.println("3. " + jugador2.equipo[1].ataques[3].nombre);
+                    jugador2.equipo[1].mostrarAtaques();
                     opcAtaque = scan.nextInt();
+
                     if (jugador1.equipo[0].vida > 0) {
                         jugador1.equipo[0].RecibirAtaque(jugador2.equipo[1].ataques[opcAtaque]);
                         if (jugador1.equipo[0].vida <= 0) {
@@ -502,13 +381,11 @@ public class Main {
                             System.out.println("Pokemon debilitado");
                         }
                     }
-                } else if (jugador2.equipo[0].vida <= 0 && jugador2.equipo[2].vida > 0) {
+                } else if (jugador2.equipo[1].vida <= 0 && jugador2.equipo[2].vida > 0) {
                     System.out.println("Ataca " + jugador2.usuario);
-                    System.out.println("0. " + jugador2.equipo[2].ataques[0].nombre);
-                    System.out.println("1. " + jugador2.equipo[2].ataques[1].nombre);
-                    System.out.println("2. " + jugador2.equipo[2].ataques[2].nombre);
-                    System.out.println("3. " + jugador2.equipo[2].ataques[3].nombre);
+                    jugador2.equipo[2].mostrarAtaques();
                     opcAtaque = scan.nextInt();
+
                     if (jugador1.equipo[0].vida > 0) {
                         jugador1.equipo[0].RecibirAtaque(jugador2.equipo[2].ataques[opcAtaque]);
                         if (jugador1.equipo[0].vida <= 0) {
