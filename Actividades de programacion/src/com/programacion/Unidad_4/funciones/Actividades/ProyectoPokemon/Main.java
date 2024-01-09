@@ -169,7 +169,7 @@ public class Main {
 
                 System.out.println("Elige " + jugador1.usuario);
                 int eleccionJugador1 = scan.nextInt(); // selecciona el pokemon
-
+            if (eleccionJugador1 > 6 && eleccionJugador1 < 1) {
                 if (eleccionJugador1 == 1) {
 
                     jugador1.equipo[contador1] = pikachu;
@@ -177,11 +177,11 @@ public class Main {
                     Jugador.comprobarPokemonEquipo(pikachu, jugador2.equipo); // Llama al metido comprobarPokemonEquipo de la clase jugador para comprobar si el pokemon está elegido
 
                     if (Jugador.comprobarPokemonEquipo(pikachu, jugador2.equipo)) {
-                        pokemonsElegidos --;
-                        contador1 --;
+                        pokemonsElegidos--;
+                        contador1--;
                         System.out.println("El pokemon ya ha sido elegido por el otro jugador");
                     } else {
-                        System.out.println(pikachu.nombre+" se ha unido a tu equipo");
+                        System.out.println(pikachu.nombre + " se ha unido a tu equipo");
                     }
 
                 } else if (eleccionJugador1 == 2) {
@@ -191,11 +191,11 @@ public class Main {
                     Jugador.comprobarPokemonEquipo(alakazam, jugador2.equipo);
 
                     if (Jugador.comprobarPokemonEquipo(alakazam, jugador2.equipo)) {
-                        pokemonsElegidos --;
-                        contador1 --;
+                        pokemonsElegidos--;
+                        contador1--;
                         System.out.println("El pokemon ya ha sido elegido por el otro jugador");
                     } else {
-                        System.out.println(alakazam.nombre+" se ha unido a tu equipo");
+                        System.out.println(alakazam.nombre + " se ha unido a tu equipo");
                     }
 
                 } else if (eleccionJugador1 == 3) {
@@ -205,11 +205,11 @@ public class Main {
                     Jugador.comprobarPokemonEquipo(marowak, jugador2.equipo);
 
                     if (Jugador.comprobarPokemonEquipo(marowak, jugador2.equipo)) {
-                        pokemonsElegidos --;
+                        pokemonsElegidos--;
                         contador1--;
                         System.out.println("El pokemon ya ha sido elegido por el otro jugador");
                     } else {
-                        System.out.println(marowak.nombre+" se ha unido a tu equipo");
+                        System.out.println(marowak.nombre + " se ha unido a tu equipo");
                     }
 
                 } else if (eleccionJugador1 == 4) {
@@ -219,11 +219,11 @@ public class Main {
                     Jugador.comprobarPokemonEquipo(machamp, jugador2.equipo);
 
                     if (Jugador.comprobarPokemonEquipo(machamp, jugador2.equipo)) {
-                        pokemonsElegidos --;
+                        pokemonsElegidos--;
                         contador1--;
                         System.out.println("El pokemon ya ha sido elegido por el otro jugador");
                     } else {
-                        System.out.println(machamp.nombre+" se ha unido a tu equipo");
+                        System.out.println(machamp.nombre + " se ha unido a tu equipo");
                     }
 
                 } else if (eleccionJugador1 == 5) {
@@ -233,11 +233,11 @@ public class Main {
                     Jugador.comprobarPokemonEquipo(rapidash, jugador2.equipo);
 
                     if (Jugador.comprobarPokemonEquipo(rapidash, jugador2.equipo)) {
-                        pokemonsElegidos --;
-                        contador1 --;
+                        pokemonsElegidos--;
+                        contador1--;
                         System.out.println("El pokemon ya ha sido elegido por el otro jugador");
                     } else {
-                        System.out.println(rapidash.nombre+" se ha unido a tu equipo");
+                        System.out.println(rapidash.nombre + " se ha unido a tu equipo");
                     }
 
                 } else if (eleccionJugador1 == 6) {
@@ -247,15 +247,15 @@ public class Main {
                     Jugador.comprobarPokemonEquipo(umbreon, jugador2.equipo);
 
                     if (Jugador.comprobarPokemonEquipo(umbreon, jugador2.equipo)) {
-                        pokemonsElegidos --;
-                        contador1 --;
+                        pokemonsElegidos--;
+                        contador1--;
                         System.out.println("El pokemon ya ha sido elegido por el otro jugador");
                     } else {
-                        System.out.println(umbreon.nombre+" se ha unido a tu equipo");
+                        System.out.println(umbreon.nombre + " se ha unido a tu equipo");
                     }
 
                 }
-                
+            }
             }
 
             if (contador2 <= 2) { // if que asigna el pokemon al jugador 2
@@ -263,91 +263,92 @@ public class Main {
                 System.out.println("Elige " + jugador2.usuario);
                 int eleccionJugador2 = scan.nextInt(); // Elige pokemon dependiendo del numero introducido por teclado
 
+                if (eleccionJugador2 <= 6 && eleccionJugador2 >=1) {
+                    if (eleccionJugador2 == 1) {
 
-                if (eleccionJugador2 == 1) {
+                        jugador2.equipo[contador2] = pikachu;
+                        contador2++;
+                        Jugador.comprobarPokemonEquipo(pikachu, jugador1.equipo);
 
-                    jugador2.equipo[contador2] = pikachu;
-                    contador2++;
-                    Jugador.comprobarPokemonEquipo(pikachu, jugador1.equipo);
+                        if (Jugador.comprobarPokemonEquipo(pikachu, jugador1.equipo)) {
+                            pokemonsElegidos--;
+                            contador2--;
+                            System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                        } else {
+                            System.out.println(pikachu.nombre + " se ha unido a tu equipo");
+                        }
 
-                    if (Jugador.comprobarPokemonEquipo(pikachu, jugador1.equipo)) {
-                        pokemonsElegidos --;
-                        contador2 --;
-                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
-                    } else {
-                        System.out.println(pikachu.nombre+" se ha unido a tu equipo");
+                    } else if (eleccionJugador2 == 2) {
+
+                        jugador2.equipo[contador2] = alakazam;
+                        contador2++;
+                        Jugador.comprobarPokemonEquipo(alakazam, jugador1.equipo);
+
+                        if (Jugador.comprobarPokemonEquipo(alakazam, jugador1.equipo)) {
+                            pokemonsElegidos--;
+                            contador2--;
+                            System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                        } else {
+                            System.out.println(alakazam.nombre + " se ha unido a tu equipo");
+                        }
+
+                    } else if (eleccionJugador2 == 3) {
+
+                        jugador2.equipo[contador2] = marowak;
+                        contador2++;
+                        Jugador.comprobarPokemonEquipo(marowak, jugador1.equipo);
+
+                        if (Jugador.comprobarPokemonEquipo(marowak, jugador1.equipo)) {
+                            pokemonsElegidos--;
+                            contador2--;
+                            System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                        } else {
+                            System.out.println(marowak.nombre + " se ha unido a tu equipo");
+                        }
+
+                    } else if (eleccionJugador2 == 4) {
+
+                        jugador2.equipo[contador2] = machamp;
+                        contador2++;
+                        Jugador.comprobarPokemonEquipo(machamp, jugador1.equipo);
+
+                        if (Jugador.comprobarPokemonEquipo(machamp, jugador1.equipo)) {
+                            pokemonsElegidos--;
+                            contador2--;
+                            System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                        } else {
+                            System.out.println(machamp.nombre + " se ha unido a tu equipo");
+                        }
+
+                    } else if (eleccionJugador2 == 5) {
+
+                        jugador2.equipo[contador2] = rapidash;
+                        contador2++;
+                        Jugador.comprobarPokemonEquipo(rapidash, jugador1.equipo);
+
+                        if (Jugador.comprobarPokemonEquipo(rapidash, jugador1.equipo)) {
+                            pokemonsElegidos--;
+                            contador2--;
+                            System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                        } else {
+                            System.out.println(rapidash.nombre + " se ha unido a tu equipo");
+                        }
+
+                    } else if (eleccionJugador2 == 6) {
+
+                        jugador2.equipo[contador2] = umbreon;
+                        contador2++;
+                        Jugador.comprobarPokemonEquipo(umbreon, jugador1.equipo);
+
+                        if (Jugador.comprobarPokemonEquipo(umbreon, jugador1.equipo)) {
+                            pokemonsElegidos--;
+                            contador2--;
+                            System.out.println("El pokemon ya ha sido elegido por el otro jugador");
+                        } else {
+                            System.out.println(umbreon.nombre + " se ha unido a tu equipo");
+                        }
+
                     }
-
-                } else if (eleccionJugador2 == 2) {
-
-                    jugador2.equipo[contador2] = alakazam;
-                    contador2++;
-                    Jugador.comprobarPokemonEquipo(alakazam, jugador1.equipo);
-
-                    if (Jugador.comprobarPokemonEquipo(alakazam, jugador1.equipo)) {
-                        pokemonsElegidos --;
-                        contador2 --;
-                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
-                    } else {
-                        System.out.println(alakazam.nombre+" se ha unido a tu equipo");
-                    }
-
-                } else if (eleccionJugador2 == 3) {
-
-                    jugador2.equipo[contador2] = marowak;
-                    contador2++;
-                    Jugador.comprobarPokemonEquipo(marowak, jugador1.equipo);
-
-                    if (Jugador.comprobarPokemonEquipo(marowak, jugador1.equipo)) {
-                        pokemonsElegidos --;
-                        contador2 --;
-                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
-                    } else {
-                        System.out.println(marowak.nombre+" se ha unido a tu equipo");
-                    }
-
-                } else if (eleccionJugador2 == 4) {
-
-                    jugador2.equipo[contador2] = machamp;
-                    contador2++;
-                    Jugador.comprobarPokemonEquipo(machamp, jugador1.equipo);
-
-                    if (Jugador.comprobarPokemonEquipo(machamp, jugador1.equipo)) {
-                        pokemonsElegidos --;
-                        contador2--;
-                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
-                    } else {
-                        System.out.println(machamp.nombre+" se ha unido a tu equipo");
-                    }
-
-                } else if (eleccionJugador2 == 5) {
-
-                    jugador2.equipo[contador2] = rapidash;
-                    contador2++;
-                    Jugador.comprobarPokemonEquipo(rapidash, jugador1.equipo);
-
-                    if (Jugador.comprobarPokemonEquipo(rapidash, jugador1.equipo)) {
-                        pokemonsElegidos --;
-                        contador2--;
-                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
-                    } else {
-                        System.out.println(rapidash.nombre+" se ha unido a tu equipo");
-                    }
-
-                } else if (eleccionJugador2 == 6) {
-
-                    jugador2.equipo[contador2] = umbreon;
-                    contador2++;
-                    Jugador.comprobarPokemonEquipo(umbreon, jugador1.equipo);
-
-                    if (Jugador.comprobarPokemonEquipo(umbreon, jugador1.equipo)) {
-                        pokemonsElegidos --;
-                        contador2--;
-                        System.out.println("El pokemon ya ha sido elegido por el otro jugador");
-                    } else {
-                        System.out.println(umbreon.nombre+" se ha unido a tu equipo");
-                    }
-
                 }
             }
 

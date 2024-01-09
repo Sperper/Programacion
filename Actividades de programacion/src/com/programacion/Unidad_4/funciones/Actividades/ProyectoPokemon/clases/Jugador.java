@@ -30,11 +30,8 @@ public class Jugador {
 
              if (equipo[i] == pokemon) {
                 pokemonEstaElegido = true;
-
                 break;
-
             }
-
         }
 
 
