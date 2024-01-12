@@ -195,17 +195,44 @@ public class Main {
             opc = scan.nextInt();
             switch (opc){
                 case 1:
+                    int contador1 = 0;
                     // Logica de la opcion 1
-
+                    for (int i = 0; i<articulos.size(); i++){
+                        if (articulos.get(i).getCuantosQuedan() <= 0) {
+                            contador1++;
+                        }
+                    }
+                    System.out.println("Hay "+contador1+" articulos sin stock");
                     break;
                 case 2:
+                    contador1 = 0;
                     // Logica de la opcion 2
+                    for (int i = 0; i<articulos.size(); i++) {
+                        if (articulos.get(i).getTipo().equalsIgnoreCase("SR")) {
+                            contador1++;
+                        }
+                    }
+                    System.out.println("Hay "+contador1+" articulos de tipo SR");
                     break;
                 case 3:
                     // Logica de la opcion 3
+                     contador1 = 0;
+
+                    for (int i = 0; i<articulos.size(); i++) {
+                        if (articulos.get(i).getPrecio() < 100) {
+                            contador1++;
+                        }
+                    }
+                    System.out.println("Hay "+contador1+" articulos con precio menor que 100");
                     break;
                 case 4:
+                    contador1 = 0;
                     // Logica de la opcion 4
+                    for (int i = 0; i<articulos.size(); i++) {
+
+                        contador++;
+                    }
+                    System.out.println("El articulo mas caro es: "+articulos.get(contador1).getNombre());
                     break;
                 case 5:
                     // Logica de la opcion 5
