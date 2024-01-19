@@ -139,6 +139,13 @@ public class Main {
         */
 
 
+        System.out.println(peliculas.get(0).getFullTitle());
+
+
+
+
+
+
 
 
 

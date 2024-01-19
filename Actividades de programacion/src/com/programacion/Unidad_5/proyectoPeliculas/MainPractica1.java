@@ -6,7 +6,7 @@ import com.programacion.Unidad_5.proyectoPeliculas.utils.JsonReaderUtil;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Practica1 {
+public class MainPractica1 {
 
     public static void main(String[] args) {
         String pelisPath = "IMDB-api/Top250Movies.json";
@@ -64,10 +64,11 @@ public class Practica1 {
             }
         } else if (opc == 6) {
             System.out.println("Indique que pelicula desea ver");
-            String nombrePelicula = scan.next();
+            String nombrePelicula = scan.nextLine();
+             nombrePelicula = scan.nextLine();
             boolean peliculaExiste = false;
             for (int i=0; i<peliculas.size(); i++) {
-                if (peliculas.get(i).getTitle().contains(nombrePelicula)) {
+                if (peliculas.get(i).getTitle().equals(nombrePelicula)) {
                     System.out.println("TITULO: "+peliculas.get(i).getFullTitle());
                     System.out.println("NOTA: "+peliculas.get(i).getImDbRating());
                     System.out.println("REPARTO: "+peliculas.get(i).getCrew());
@@ -75,7 +76,7 @@ public class Practica1 {
                     peliculaExiste=true;
                 }
             }
-            if (peliculaExiste) {
+            if (!peliculaExiste) {
                 System.out.println("La pelicula no existe");
             }
         } else if (opc == 7) {
