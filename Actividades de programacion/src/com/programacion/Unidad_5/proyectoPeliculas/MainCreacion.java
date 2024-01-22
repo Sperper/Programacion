@@ -47,10 +47,12 @@ public class MainCreacion {
                 case 3:
                     PeliculasService.eliminarPelicula();
                     break;
+                case 4:
+                    PeliculasService.modificarPelicula();
+                    break;
                 case 0:
                     System.out.println("Adios...");
                     break;
-
                 default:
                     System.out.println("Opcion no valida");
                     break;
