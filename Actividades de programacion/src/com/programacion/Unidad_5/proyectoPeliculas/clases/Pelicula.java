@@ -112,7 +112,7 @@ public class Pelicula {
             } else {
                 this.imDbRating = "0";
             }
-        } catch (ClassCastException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             this.imDbRating = "0";
         }

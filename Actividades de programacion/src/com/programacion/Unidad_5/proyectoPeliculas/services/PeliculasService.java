@@ -163,10 +163,9 @@ public class PeliculasService {
     }
 
     public static void modificarPelicula(){
-        System.out.println("Dime el nombre de la pelicula que desea modificar");
+        System.out.print("Dime el nombre de la pelicula que desea modificar");
         Scanner scan = new Scanner(System.in);
         String nombrePelicula = scan.nextLine();
-        nombrePelicula = scan.nextLine();
         for (int i=0; i<MainCreacion.peliculas.size(); i++) {
             if (MainCreacion.peliculas.get(i).getTitle().contains(nombrePelicula)) {
                 System.out.println(MainCreacion.peliculas.get(i).getTitle());
@@ -182,36 +181,50 @@ public class PeliculasService {
                         4. Reparto
                         """);
                 int opc = scan.nextInt();
+                scan.nextLine();
+                String cambio= "";
                 switch (opc) {
                     case 1:
                         System.out.print("Escriba el nuevo nombre de la pelicula: ");
-                        String cambio = scan.nextLine();
                         cambio = scan.nextLine();
                         MainCreacion.peliculas.get(i).setTitle(cambio);
                         break;
                     case 2:
-                        System.out.println("Escriba el nuevo anio de crecion de la pelicula");
-                        cambio = scan.nextLine();
+                        System.out.print("Escriba el nuevo anio de creacion de la pelicula");
                         cambio = scan.nextLine();
                         MainCreacion.peliculas.get(i).setYear(cambio);
                         break;
                     case 3:
-                        System.out.println("Escriba la nueva nota de la creacion de la pelicula");
-                        cambio = scan.nextLine();
+                        System.out.print("Escriba la nueva nota de la pelicula");
                         cambio = scan.nextLine();
                         MainCreacion.peliculas.get(i).setImDbRating(cambio);
+                        for (int j=0; j<MainCreacion.peliculas.size(); j++) {
+                            double notaPelimodi = Double.parseDouble(MainCreacion.peliculas.get(i).getImDbRating());
+                            double notaPeliLista = Double.parseDouble(MainCreacion.peliculas.get(j).getImDbRating());
+
+                            if (notaPelimodi > notaPeliLista) {
+                                // Insertamos la peliNueva en la posición de la pelicula de la lista
+                                MainCreacion.peliculas.get(i).setRank(MainCreacion.peliculas.get(j).getRank());
+                                MainCreacion.peliculas.add(i, MainCreacion.peliculas.get(i));
+
+                                for (int k=i+1; k<MainCreacion.peliculas.size();k++) {
+                                    int rankingAntiguo = Integer.parseInt(MainCreacion.peliculas.get(k).getRank());
+                                    int rankingNuevo = rankingAntiguo + 1;
+                                    MainCreacion.peliculas.get(k).setRank(rankingNuevo+"");
+                                }
+
+                                break;
+                            }
+                        }
                         break;
                     case 4:
                         System.out.println("Escriba el nuevo reparto de la pelicula");
                         System.out.print("Director: ");
                         String director = scan.nextLine();
-                        director = scan.nextLine();
                         System.out.print("Actor 1: ");
                         String act1 = scan.nextLine();
-                        act1 = scan.nextLine();
                         System.out.print("Actor 2: ");
                         String act2 = scan.nextLine();
-                        act2 = scan.nextLine();
                         MainCreacion.peliculas.get(i).setCrew(director, act1, act2);
                         break;
                 }

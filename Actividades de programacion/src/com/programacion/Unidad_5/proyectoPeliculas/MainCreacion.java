@@ -21,19 +21,22 @@ public class MainCreacion {
         Hacer un manú para dar la opción de crear un nuevo registro.
          */
         Scanner scan = new Scanner(System.in);
-        System.out.print("""
+
+        try {
+            int opc = 1;
+        while (opc != 0) {
+
+            System.out.print("""
                 Bienvenid@ al CRUD de Peliculas
                 
                 1. Insertar Peliculas
                 2. Mostrar Peliculas de mayor a menor
                 3. Eliminar pelicula
+                4. Modificar pelicula
                 0. Salir
                 
                 Escoja una opcion
                 """);
-        try {
-            int opc = 1;
-        while (opc != 0) {
 
             opc = scan.nextInt();
 
