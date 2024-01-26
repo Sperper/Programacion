@@ -1,5 +1,7 @@
 package com.programacion.Unidad_5.proyectoAgenda.clases;
 
+import com.programacion.Unidad_5.proyectoAgenda.utils.AgendaUtils;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,6 +12,7 @@ public class Persona {
     private int edad;
     private String telefono;
     private String email;
+    private Direccion direccion;
 
     public String getNombre() {
 
@@ -17,14 +20,9 @@ public class Persona {
     }
 // 42
     public void setNombre(String nombre) {
-        Pattern pattern = Pattern.compile("^[A-Z][a-z]{0,42}$");
-        Matcher matcher = pattern.matcher(nombre);
-        if (matcher.find()) {
+        if (AgendaUtils.checkNombre(nombre)) {
             this.nombre = nombre;
-        } else {
-            System.out.println("El nombre introducido es incorrecto");
         }
-
     }
 
     public String getDni() {
@@ -32,14 +30,9 @@ public class Persona {
     }
 
     public void setDni(String dni) {
-        Pattern pattern = Pattern.compile("\\d{9}[a-zA-Z]");
-        Matcher matcher = pattern.matcher(dni);
-        if (matcher.find()) {
+        if (AgendaUtils.checkDni(dni)) {
             this.dni = dni;
-        } else {
-            System.out.println("El dni introducido es incorrecto");
         }
-
     }
 
     public int getEdad() {
@@ -55,14 +48,9 @@ public class Persona {
     }
 
     public void setTelefono(String telefono) {
-        Pattern pattern = Pattern.compile("^((\\d{3}(\\s?\\d{2}){3})|(\\d{3}(\\s?\\d{3}){2}))$");
-        Matcher matcher = pattern.matcher(telefono);
-        if (matcher.find()) {
+        if (AgendaUtils.checkTlfn(telefono)) {
             this.telefono = telefono;
-        } else {
-            System.out.println("El telefono introducido es incorrecto");
         }
-
     }
 
     public String getEmail() {
@@ -70,7 +58,17 @@ public class Persona {
     }
 
     public void setEmail(String email) {
-        Pattern pattern = Pattern.compile("");
-        this.email = email;
+        if (AgendaUtils.checkEmail(email)) {
+            this.email = email;
+        }
+    }
+
+    public void presentacion(){
+        System.out.printf("Hola me llamo %s, con dni %s y tengo %d anios\n", this.nombre, this.dni, this.edad);
+        System.out.printf("Puedes contactarme en %s o en mi teléfono %s\n",this.email, this.telefono);
+
+        System.out.println("Si quieres visitarme, ven a ");
+        direccion.presentacion();
+
     }
 }
