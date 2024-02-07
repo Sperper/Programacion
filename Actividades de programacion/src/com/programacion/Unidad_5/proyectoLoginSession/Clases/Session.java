@@ -1,21 +1,14 @@
 package com.programacion.Unidad_5.proyectoLoginSession.Clases;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Session {
 
-    private String Session;
-    private LocalDateTime lastLogin;
-    private LocalDateTime sessionExpires;
+    private String nSession;
     private User usuario;
 
-    public LocalDateTime getSessionExpires() {
-        return sessionExpires;
-    }
 
-    public void setSessionExpires(LocalDateTime sessionExpires) {
-        this.sessionExpires = sessionExpires;
-    }
 
     public User getUsuario() {
         return usuario;
@@ -25,19 +18,13 @@ public class Session {
         this.usuario = usuario;
     }
 
-    public String getSession() {
-        return Session;
+    private String getnSession() {
+        return nSession;
     }
 
-    public void setSession(String session) {
-        Session = session;
+    private void setnSession() {
+        this.nSession = UUID.randomUUID().toString();
     }
 
-    public LocalDateTime getLastLogin() {
-        return lastLogin;
-    }
 
-    public void setLastLogin(LocalDateTime lastLogin) {
-        this.lastLogin = lastLogin;
-    }
 }

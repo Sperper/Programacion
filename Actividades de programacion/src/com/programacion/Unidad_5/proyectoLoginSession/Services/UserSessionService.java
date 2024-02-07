@@ -59,18 +59,8 @@ public class UserSessionService {
 
     public boolean addUser(User user){
         boolean addUser = false;
-        if (!checkIfUserExists(user) && !checkIfUserIsDuplicate(user.getUser())) {
-            usersRegistered.add(user);
-            addUser = true;
-        } else {
-            System.out.println("ERROR AL AÑADIR EL USUARIO");
-        }
+
         return addUser;
     }
-    public boolean addSession(User user) {
-        boolean addSession = false;
-        if (!checkIfSessionIsActive(user.getUser())) {
-            aciveSessions.add()
-        }
-    }
+
 }
