@@ -23,6 +23,12 @@ public class Main {
 
         inventt.mostrarDatosAnimales();
 
+        inventt.eliminarMascota("Pulga");
+
+        inventt.mostrarDatosAnimales();
+
+        inventt.mostrarTipoYNombreAnimal();
+
     }
 
 }
