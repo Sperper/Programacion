@@ -1,0 +1,8 @@
+package com.programacion.Unidad_6.proyectoTransporte.impl;
+
+public class Vehiculo {
+
+    protected String matricula;
+    protected String modelo;
+
+}
