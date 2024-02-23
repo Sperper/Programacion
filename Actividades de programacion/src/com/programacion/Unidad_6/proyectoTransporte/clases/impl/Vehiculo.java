@@ -1,6 +1,4 @@
-package com.programacion.Unidad_6.proyectoTransporte.impl;
-
-import com.programacion.Unidad_5.proyectoEU.clases.Pais;
+package com.programacion.Unidad_6.proyectoTransporte.clases.impl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

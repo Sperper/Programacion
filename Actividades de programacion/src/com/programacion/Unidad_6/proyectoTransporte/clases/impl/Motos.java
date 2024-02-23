@@ -1,4 +1,4 @@
-package com.programacion.Unidad_6.proyectoTransporte.impl;
+package com.programacion.Unidad_6.proyectoTransporte.clases.impl;
 
 public class Motos extends VTerrestre{
 

@@ -1,6 +1,4 @@
-package com.programacion.Unidad_6.proyectoTransporte.impl;
-
-import java.sql.Time;
+package com.programacion.Unidad_6.proyectoTransporte.clases.impl;
 
 public class Aviones extends VAereo{
 
@@ -8,7 +6,7 @@ public class Aviones extends VAereo{
     private int tiempoVueloMax;
 
     // Constructores
-    public Aviones(String matricula, String modelo, int nAsientos, double tiempoVueloMax) {
+    public Aviones(String matricula, String modelo, int nAsientos, int tiempoVueloMax) {
         super(matricula, modelo, nAsientos);
         this.tiempoVueloMax = tiempoVueloMax;
     }

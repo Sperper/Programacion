@@ -1,8 +1,8 @@
-package com.programacion.Unidad_6.proyectoTransporte.impl;
+package com.programacion.Unidad_6.proyectoTransporte.clases.impl;
 
 public class VTerrestre extends Vehiculo{
 
-    private int numRuedas;
+    protected int numRuedas;
 
     public VTerrestre(String matricula, String modelo, int numRuedas) {
         super(matricula, modelo);
