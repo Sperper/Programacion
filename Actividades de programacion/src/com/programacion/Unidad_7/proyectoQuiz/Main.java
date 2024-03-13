@@ -3,6 +3,7 @@ package com.programacion.Unidad_7.proyectoQuiz;
 import javax.annotation.processing.Filer;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -71,24 +72,52 @@ public class Main {
 
         System.out.println("Bienvenido al concursillo");
         Scanner scan = new Scanner(System.in);
-        String respuesta = "";
+        // String respuesta = "";
         int puntuacion = 0;
-        int preguntaAleatoria = (int)Math.floor(Math.random()*3);
+        int numeroAleatorio = (int)Math.floor(Math.random()*3);
 
+    /*
         for (int i=0; i<preguntas.size(); i++) {
-            System.out.println(preguntas.get(preguntaAleatoria));
+            System.out.println(preguntas.get(numeroAleatorio));
             respuesta = scan.nextLine();
-            if (respuesta.equalsIgnoreCase(respuestas.get(preguntaAleatoria))) {
+            if (respuesta.equalsIgnoreCase(respuestas.get(numeroAleatorio))) {
                 puntuacion ++;
                 System.out.println("La respuesta es correcta");
             } else {
                 System.out.println("Respuesta incorrecta");
             }
-            preguntaAleatoria = (int)Math.floor(Math.random()*3);
+            numeroAleatorio = (int)Math.floor(Math.random()*3);
         }
 
         System.out.println("Puntuacion: "+puntuacion);
+*/
 
+        // MANERA RANDOM
+        String respuestaUsuarioR = "";
+        String salir = "";
+        int nCorrectasR = 0;
+        Random r = new Random();
+
+        while (!salir.equalsIgnoreCase("si")) {
+            int nRandom = r.nextInt(preguntas.size());
+            String pregunta = preguntas.get(nRandom);
+            String respuesta = respuestas.get(nRandom);
+
+            System.out.println(pregunta);
+            respuestaUsuarioR = scan.nextLine();
+
+            if(respuestaUsuarioR.equalsIgnoreCase(respuesta)) {
+                System.out.println("Respuesta correcta");
+                nCorrectasR++;
+            } else {
+                System.out.println("Respuesta incorrecta, la respuesta correcta era..."+respuesta);
+            }
+
+            System.out.println("¿Salir? si/no");
+            salir = scan.nextLine();
+        }
+
+        System.out.println("Has acertado "+nCorrectasR+" preguntas");
 
 
 
