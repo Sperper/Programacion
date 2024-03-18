@@ -5,6 +5,7 @@ import com.programacion.Unidad_7.proyectoTrivial.model.Pregunta;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GestionFichero {
 
@@ -35,21 +36,22 @@ public class GestionFichero {
                 // a) Separar la línea en pregunta y respuesta (con el .split)
 
                 String linea = br.readLine();
-                while (linea != null) {
-                    String[] lineaSeparada = linea.split(linea);
-                    String pregunta = lineaSeparada[0];
-                    String respuesta = lineaSeparada[1];
+                    while (linea != null) {
+                        String[] lineaSeparada = linea.split(linea);
+                        String pregunta = lineaSeparada[0];
+                        String respuesta = lineaSeparada[1];
 
-                    // b) Crear un objeto de tipo Pregunta
+                        // b) Crear un objeto de tipo Pregunta
 
-                    Pregunta p1 = new Pregunta(pregunta, respuesta);
+                        Pregunta p1 = new Pregunta(pregunta, respuesta);
 
 
-                    // c) Si el objeto se ha creado correctamente, añadirlo al arrayList arrDePreguntasTemporal
-
-                    arrDePreguntasTemporal.add(p1);
-                    linea = br.readLine();
-                }
+                        // c) Si el objeto se ha creado correctamente, añadirlo al arrayList arrDePreguntasTemporal
+                        if (!arrDePreguntasTemporal.contains(p1)) {
+                            arrDePreguntasTemporal.add(p1);
+                        }
+                        linea = br.readLine();
+                    }
 
                 // 5º Cerrar los flujos
                 fr.close();
@@ -103,12 +105,65 @@ public class GestionFichero {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    // Metodo leerFicheroPuntuacion() y devuelve un ArrayList de participante
 
+    public ArrayList<Participante> leerFicheroPuntuacion(){
 
+        File fichPuntuacion = new File("src/resources/archivosTema7/Participantes.txt");
+        ArrayList<Participante> arrParticipante = new ArrayList<>();
 
+        if (fichPuntuacion.exists() && fichPuntuacion.isFile() && fichPuntuacion.canRead()) {
+            try {
 
+                FileReader fr = new FileReader(fichPuntuacion);
+                BufferedReader br = new BufferedReader(fr);
 
+                String linea = br.readLine();
+                while (linea != null) {
+                    String[] lineaSeparada = linea.split(linea);
+                    String id = lineaSeparada[0];
 
+                    Participante p1 = new Participante(null, id);
+
+                    if (!arrParticipante.contains(p1)) {
+                        arrParticipante.add(p1);
+                    }
+                    linea = br.readLine();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return arrParticipante;
     }
 
+    // Metodo escribirFicheroPreguntas(arrPreg : ArrayList<Pregunta>)
+    public void escribirFicheroPreguntas(ArrayList<Pregunta> arrPreg) {
+        // Abrir File
+        File fichPreguntas = new File("src/resources/archivosTema7/proyectoQuiz");
+
+        if (fichPreguntas.exists() && fichPreguntas.isFile() && fichPreguntas.canWrite()) {
+            try {
+
+                FileWriter fw = new FileWriter(fichPreguntas);
+                BufferedWriter bw = new BufferedWriter(fw);
+
+                Scanner scan = new Scanner(System.in);
+
+                System.out.println("Escriba su pregunta");
+                String pregunta = scan.nextLine();
+
+                System.out.println("Escriba la respuesta");
+                String respuesta = scan.nextLine();
+
+                bw.write(pregunta+":"+respuesta);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
