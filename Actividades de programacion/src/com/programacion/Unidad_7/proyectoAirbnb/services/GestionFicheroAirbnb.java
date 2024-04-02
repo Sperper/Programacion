@@ -3,18 +3,16 @@ package com.programacion.Unidad_7.proyectoAirbnb.services;
 import com.programacion.Unidad_7.proyectoAirbnb.model.Alojamiento;
 import com.programacion.Unidad_7.proyectoAirbnb.model.Propietario;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GestionFicheroAirbnb {
 
     /*
     2 metodos.
     1 para leer el fichero csv y extraer la informacion que queremos
-    y otro para escribir esa informacionn en otro fichero aparte
+    y otro para escribir esa informacion en otro fichero aparte
      */
 
     public ArrayList<Alojamiento> leerFicheroAlojamientos(String ruta) {
@@ -52,6 +50,25 @@ public class GestionFicheroAirbnb {
         }
 
         return arrAloj;
+    }
+
+    public void escribirFichero(ArrayList<Alojamiento> a, ArrayList<Propietario> p) {
+        // Abrir File
+        File fichEscribir = new File("src/resources/archivosTema7/proyectoQuiz");
+
+        if (fichEscribir.exists() && fichEscribir.isFile() && fichEscribir.canWrite()) {
+            try {
+
+                FileWriter fw = new FileWriter(fichEscribir);
+                BufferedWriter bw = new BufferedWriter(fw);
+
+
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
