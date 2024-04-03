@@ -56,7 +56,7 @@ public class GestionFicheroUser {
     }
 
 
-    public void modificarFicheroUser (User user, String ruta) {
+    public void modificarFicheroUser (ArrayList<User> user, String ruta) {
 
         // Abrimos el fichero
         File fichero = new File(ruta);
@@ -67,7 +67,10 @@ public class GestionFicheroUser {
                 BufferedWriter bw = new BufferedWriter(fw);
 
                 // Se opera con el fichero despues de abrir los flujos
-                bw.write(user.getId()+":"+ user.getName()+":"+user.getPass()+":"+user.isAdmin());
+                for (int i=0; i<user.size(); i++) {
+                    bw.write(user.get(i).getId()+":"+user.get(i).getName()+":"
+                            +user.get(i).getPass()+":"+user.get(i).isAdmin());
+                }
 
 
                 bw.close();
@@ -78,4 +81,26 @@ public class GestionFicheroUser {
         }
 
     }
+
+    public void anadirRegistroFichero(String ruta, User user){
+        File fichero = new File(ruta);
+
+        if (fichero.isFile() && fichero.exists() && fichero.canWrite()) {
+            try {
+                FileWriter fw = new FileWriter(fichero, true);
+                BufferedWriter bw = new BufferedWriter(fw);
+
+                // Se opera con el fichero despues de abrir los flujos
+                bw.write(user.getId()+":"+user.getName()+":"
+                        +user.getPass()+":"+user.isAdmin());
+
+
+                bw.close();
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

@@ -45,7 +45,7 @@ public class Alojamiento implements Comparable<Alojamiento>{
         return "Alojamiento{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", propietario=" + propietario +
+                ", propietario=" + getPropietario().toString() +
                 ", precio=" + precio +
                 '}';
     }

@@ -24,7 +24,13 @@ public class Propietario {
         return false;
     }
 
-
+    @Override
+    public String toString() {
+        return "Propietario{" +
+                "host_id='" + host_id + '\'' +
+                ", host_name='" + host_name + '\'' +
+                '}';
+    }
 
 
     // Getters and Setters
