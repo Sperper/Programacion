@@ -1,7 +1,5 @@
 package com.programacion.Unidad_7.proyectoUser;
 
-import com.programacion.Unidad_7.proyectoUser.services.GestionFicheroUser;
-
 import java.util.Scanner;
 
 public class Main {

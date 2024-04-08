@@ -1,4 +1,4 @@
-package com.programacion.Unidad_7.proyectoUser.services;
+package com.programacion.Unidad_7.proyectoUser.services.impl;
 
 import com.programacion.Unidad_7.proyectoUser.model.User;
 
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class GestionFicheroUser {
 
-    public ArrayList<User> leerFicherUser(){
+    public ArrayList<User> leerFicherUser(String ruta){
         ArrayList<User> arrUser = new ArrayList<>();
 
         File fich = new File("src/resources/archivosTema7/users/users.txt");
@@ -63,7 +63,7 @@ public class GestionFicheroUser {
 
         if (fichero.isFile() && fichero.exists() && fichero.canWrite()) {
             try {
-                FileWriter fw = new FileWriter(fichero, true);
+                FileWriter fw = new FileWriter(fichero);
                 BufferedWriter bw = new BufferedWriter(fw);
 
                 // Se opera con el fichero despues de abrir los flujos
@@ -82,7 +82,7 @@ public class GestionFicheroUser {
 
     }
 
-    public void anadirRegistroFichero(String ruta, User user){
+    public void anadirRegistroFichero(String ruta, User u){
         File fichero = new File(ruta);
 
         if (fichero.isFile() && fichero.exists() && fichero.canWrite()) {
@@ -91,6 +91,7 @@ public class GestionFicheroUser {
                 BufferedWriter bw = new BufferedWriter(fw);
 
                 // Se opera con el fichero despues de abrir los flujos
+                User user = null;
                 bw.write(user.getId()+":"+user.getName()+":"
                         +user.getPass()+":"+user.isAdmin());
 
