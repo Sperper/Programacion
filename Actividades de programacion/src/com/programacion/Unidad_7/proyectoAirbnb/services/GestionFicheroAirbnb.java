@@ -75,7 +75,7 @@ public class GestionFicheroAirbnb {
                     bw.write(aloj.get(i).getId()+","+
                     aloj.get(i).getName()+","+aloj.get(i).getPrecio()+","+
                             aloj.get(i).getPropietario().getHost_id()+","+
-                            aloj.get(i).getPropietario().getHost_name());
+                            aloj.get(i).getPropietario().getHost_name()+"\n");
                 }
 
                 fw.close();

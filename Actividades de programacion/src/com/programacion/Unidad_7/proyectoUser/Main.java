@@ -23,12 +23,12 @@ public class Main {
         int opc = 0;
         do {
             System.out.println("""
-                    Bienvenido al sistema que desea hacer:
-                    1. Login
-                    2. Dar de alta
-                    3. Modificar su Usuario
-                    4. Dar de baja
-                    """);
+                Bienvenido al sistema que desea hacer:
+                1. Login
+                2. Dar de alta
+                3. Modificar su Usuario
+                4. Dar de baja
+                """);
 
 
 

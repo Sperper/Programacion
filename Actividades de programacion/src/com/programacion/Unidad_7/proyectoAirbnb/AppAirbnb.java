@@ -32,6 +32,7 @@ public class AppAirbnb {
                     """);
             try {
                 opc = scan.nextInt();
+                scan.nextLine();
                 switch (opc) {
                     case 1:
 
@@ -57,6 +58,7 @@ public class AppAirbnb {
                     case 3:
                         System.out.println("Dime el presupuesto maximo");
                         int presupuesto = scan.nextInt();
+                        scan.nextLine();
 
                         for (int i=0; i<alojamientos.size(); i++){
                             if (presupuesto > alojamientos.get(i).getPrecio()){
