@@ -18,8 +18,8 @@ public class ServiceUser implements BasicServiceUser{
 
     public ServiceUser(){
         this.users = new ArrayList<>();
-        this.users = gestion.leerFicherUser("src/resources/archivosTema7/users/users.txt");
         this.gestion = new GestionFicheroUser();
+        this.users = gestion.leerFicherUser("src/resources/archivosTema7/users/users.txt");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class ServiceUser implements BasicServiceUser{
                 String id = UUID.randomUUID().toString();
                 User u = new User(id, usuario, passwordUsuario, false);
                 System.out.println("Bienvenid@ "+usuario);
-                gestion.anadirRegistroFichero("src/resources/archivosTema7/users/users.txt", u);
+                this.anadirFicheroUsers(u);
 
                 return true;
             } else {
