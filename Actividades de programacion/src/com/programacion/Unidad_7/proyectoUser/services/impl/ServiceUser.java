@@ -29,7 +29,7 @@ public class ServiceUser implements BasicServiceUser{
         String usuario = "";
         String passwordUsuario = "";
 
-        System.out.println("Introduzca su nombre de usuario");
+        System.out.println("Introduzca el nombre de usuario");
         usuario = scan.nextLine();
 
         // Comprobamos en el fichero si el idUser existe
