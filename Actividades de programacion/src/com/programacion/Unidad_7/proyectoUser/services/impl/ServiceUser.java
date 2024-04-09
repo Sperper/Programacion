@@ -90,6 +90,8 @@ public class ServiceUser implements BasicServiceUser{
     @Override
     public boolean checkUser(String idUser, String password) {
 
+
+
         // 1º manera de hacerlo
         /*
         for (int i=0; i<this.users.size(); i++) {
@@ -115,12 +117,18 @@ public class ServiceUser implements BasicServiceUser{
                 .isEmpty();
          */
 
-
         return false;
+
     }
 
     @Override
     public boolean userExists(String idUser) {
+
+        for (User usuario : this.users) {
+            if (usuario.getId().equalsIgnoreCase(idUser)) {
+                return true;
+            }
+        }
         return false;
     }
 

@@ -10,7 +10,7 @@ public class GestionFicheroUser {
     public ArrayList<User> leerFicherUser(String ruta){
         ArrayList<User> arrUser = new ArrayList<>();
 
-        File fich = new File("src/resources/archivosTema7/users/users.txt");
+        File fich = new File(ruta);
 
         if (fich.exists() && fich.isFile() && fich.canRead()) {
             // Abrimos los flujos
