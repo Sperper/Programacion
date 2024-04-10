@@ -41,6 +41,8 @@ public class GestionFicheroUser {
                         arrUser.add(u);
                     }
 
+                    linea = br.readLine();
+
                 }
 
                 br.close();
@@ -91,9 +93,9 @@ public class GestionFicheroUser {
                 BufferedWriter bw = new BufferedWriter(fw);
 
                 // Se opera con el fichero despues de abrir los flujos
-                User user = null;
-                bw.write(user.getId()+":"+user.getName()+":"
-                        +user.getPass()+":"+user.isAdmin());
+
+                bw.write(u.getId()+":"+u.getName()+":"
+                        +u.getPass()+":"+u.isAdmin()+"\n");
 
 
                 bw.close();

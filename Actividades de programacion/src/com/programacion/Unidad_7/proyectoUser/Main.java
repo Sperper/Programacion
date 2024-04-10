@@ -3,6 +3,7 @@ package com.programacion.Unidad_7.proyectoUser;
 import com.programacion.Unidad_7.proyectoUser.model.User;
 import com.programacion.Unidad_7.proyectoUser.services.impl.GestionFicheroLogger;
 import com.programacion.Unidad_7.proyectoUser.services.impl.GestionFicheroUser;
+import com.programacion.Unidad_7.proyectoUser.services.impl.LoggerService;
 import com.programacion.Unidad_7.proyectoUser.services.impl.ServiceUser;
 
 import java.util.ArrayList;
@@ -16,7 +17,10 @@ public class Main {
     public static void main(String[] args) {
         GestionFicheroUser gestUser = new GestionFicheroUser();
         ArrayList<User> users = new ArrayList<>();
-        users = gestUser.leerFicherUser("src/resources/archivosTema7/users/users.txt")
+        users = gestUser.leerFicherUser("src/resources/archivosTema7/users/users.txt");
+        ServiceUser servicio = new ServiceUser();
+        LoggerService logger = new LoggerService();
+
 
         /*
         Menu login:
@@ -31,13 +35,23 @@ public class Main {
         do {
             System.out.println("""
                 Bienvenido al sistema que desea hacer:
-                1. Login
-                2. Alta
+                1. Alta
+                2. Login
                 0. Salir
                 """);
             opc = scan.nextInt();
 
-
+            switch (opc) {
+                case 1:
+                    servicio.altaUsuario();
+                    break;
+                case 2:
+                    servicio.loginUsuario();
+                    break;
+                case 0:
+                    System.out.println("Saliendo del sistema");
+                    break;
+            }
 
 
         } while (opc != 0);

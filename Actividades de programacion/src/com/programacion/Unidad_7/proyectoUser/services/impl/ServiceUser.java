@@ -14,12 +14,13 @@ public class ServiceUser implements BasicServiceUser{
     // ATRIBUTOS
     ArrayList<User> users; // Contiene todos los registros del fichero users.txt
     GestionFicheroUser gestion; // gestion es un objeto para poder llamar a los métodos de GestionFicheroUser
-
+    LoggerService log;
 
     public ServiceUser(){
         this.users = new ArrayList<>();
         this.gestion = new GestionFicheroUser();
         this.users = gestion.leerFicherUser("src/resources/archivosTema7/users/users.txt");
+        this.log = new LoggerService();
     }
 
     @Override
@@ -43,6 +44,7 @@ public class ServiceUser implements BasicServiceUser{
                 User u = new User(id, usuario, passwordUsuario, false);
                 System.out.println("Bienvenid@ "+usuario);
                 this.anadirFicheroUsers(u);
+                log.logAlta(usuario);
 
                 return true;
             } else {
@@ -72,8 +74,9 @@ public class ServiceUser implements BasicServiceUser{
             System.out.println("Introduzca su password: ");
             passwordUsuario = scan.nextLine();
 
-            if (checkUser(idUsuario, passwordUsuario)) {
 
+            if (checkUser(idUsuario, passwordUsuario)) {
+                log.logLogin(idUsuario);
                 System.out.println("Bienvenid@ "+idUsuario);
                 return true;
             } else {
@@ -104,7 +107,7 @@ public class ServiceUser implements BasicServiceUser{
 
         // 2º manera de hacerlo
         for (User usuario : this.users) {
-            if (usuario.getId().equalsIgnoreCase(idUser) && usuario.getPass().equals(password)){
+            if (usuario.getName().equalsIgnoreCase(idUser) && usuario.getPass().equals(password)){
                 return true;
             }
         }
@@ -125,7 +128,7 @@ public class ServiceUser implements BasicServiceUser{
     public boolean userExists(String idUser) {
 
         for (User usuario : this.users) {
-            if (usuario.getId().equalsIgnoreCase(idUser)) {
+            if (usuario.getName().equalsIgnoreCase(idUser)) {
                 return true;
             }
         }

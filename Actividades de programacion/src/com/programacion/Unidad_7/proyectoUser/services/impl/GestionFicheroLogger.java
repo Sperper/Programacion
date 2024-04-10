@@ -14,7 +14,7 @@ public class GestionFicheroLogger {
 
         if (fichLog.exists() && fichLog.isFile() && fichLog.canRead()) {
             try {
-                FileWriter fw = new FileWriter(fichLog);
+                FileWriter fw = new FileWriter(fichLog, true);
                 BufferedWriter bw = new BufferedWriter(fw);
 
                 bw.write(mensaje);
