@@ -7,11 +7,10 @@ import com.programacion.Unidad_7.proyectoUser.services.impl.LoggerService;
 import com.programacion.Unidad_7.proyectoUser.services.impl.ServiceUser;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-
-
 
 
     public static void main(String[] args) {
@@ -31,31 +30,34 @@ public class Main {
          */
 
         Scanner scan = new Scanner(System.in);
+
         int opc = 0;
         do {
             System.out.println("""
-                Bienvenido al sistema que desea hacer:
-                1. Alta
-                2. Login
-                0. Salir
-                """);
-            opc = scan.nextInt();
+                    Bienvenido al sistema que desea hacer:
+                    1. Alta
+                    2. Login
+                    0. Salir
+                    """);
+            try {
 
-            switch (opc) {
-                case 1:
-                    servicio.altaUsuario();
-                    break;
-                case 2:
-                    servicio.loginUsuario();
-                    break;
-                case 0:
-                    System.out.println("Saliendo del sistema");
-                    break;
+                opc = scan.nextInt();
+                switch (opc) {
+                    case 1:
+                        servicio.altaUsuario();
+                        break;
+                    case 2:
+                        servicio.loginUsuario();
+                        break;
+                    case 0:
+                        System.out.println("Saliendo del sistema");
+                        break;
+
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR EN LA OPCION, INTRODUCE UNA RESPUESTA VALIDA");
             }
-
-
         } while (opc != 0);
-
     }
-
 }
