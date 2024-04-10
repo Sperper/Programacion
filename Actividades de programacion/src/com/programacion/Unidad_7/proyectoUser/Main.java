@@ -20,19 +20,10 @@ public class Main {
         ServiceUser servicio = new ServiceUser();
         LoggerService logger = new LoggerService();
 
-
-        /*
-        Menu login:
-        1. Login
-        2. Dar de alta
-        3. Modificar Usuario
-        4. Dar de baja
-         */
-
         Scanner scan = new Scanner(System.in);
 
         int opc = 0;
-        do {
+        do { // Bucle do while que mostrará las opciones
             System.out.println("""
                     Bienvenido al sistema que desea hacer:
                     1. Alta

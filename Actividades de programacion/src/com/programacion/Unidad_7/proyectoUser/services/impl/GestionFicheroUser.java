@@ -7,6 +7,12 @@ import java.util.ArrayList;
 
 public class GestionFicheroUser {
 
+    /**
+     * Método que lee el fichero users.txt, crea un usuario con esa información
+     * y además lo añade a un ArrayList de usuarios.
+     * @param ruta -> Ruta en la que se encuentra el fichero
+     * @return ArrayList de User
+     */
     public ArrayList<User> leerFicherUser(String ruta){
         ArrayList<User> arrUser = new ArrayList<>();
 
@@ -26,6 +32,7 @@ public class GestionFicheroUser {
                     String name_user = "";
                     String pass_user = "";
 
+                    // Array de string para almaenar los Strings guardados
                     String[] valores = linea.split(":");
 
                     id_user = valores[0];
@@ -58,11 +65,17 @@ public class GestionFicheroUser {
     }
 
 
+    /**
+     * Método para modificar el fichero users.txt
+     * @param user -> ArrayList de usuarios
+     * @param ruta -> Ruta en la que se ecuentra el fichero users.txt
+     */
     public void modificarFicheroUser (ArrayList<User> user, String ruta) {
 
         // Abrimos el fichero
         File fichero = new File(ruta);
 
+        // If para comprobar si es un fichero, si existe y si se puede escribir
         if (fichero.isFile() && fichero.exists() && fichero.canWrite()) {
             try {
                 FileWriter fw = new FileWriter(fichero);
@@ -84,10 +97,18 @@ public class GestionFicheroUser {
 
     }
 
+    /**
+     * Método para añadir registros al fichero users.txt
+     * @param ruta -> Ruta en la que se encuentra el fichero
+     * @param u -> User que tiene que añadir
+     */
     public void anadirRegistroFichero(String ruta, User u){
+        // Inicializa el objeto File
         File fichero = new File(ruta);
 
+        // If que comprueba si es un archivo, si existe y si se puede escribir
         if (fichero.isFile() && fichero.exists() && fichero.canWrite()) {
+            // try-catch para capturar la IOException
             try {
                 FileWriter fw = new FileWriter(fichero, true);
                 BufferedWriter bw = new BufferedWriter(fw);

@@ -7,6 +7,13 @@ public class User {
     private String pass;
     private boolean isAdmin;
 
+    /**
+     *
+     * @param id -> Id del usuario
+     * @param name -> Nombre del usuario
+     * @param pass -> Contraseña del usuario
+     * @param isAdmin -> Boolean que es true si es admin o false si no lo es
+     */
     public User (String id, String name, String pass, boolean isAdmin) {
         setAdmin(isAdmin);
         setPass(pass);
