@@ -1,7 +1,6 @@
 package com.programacion.Unidad_7.proyectoUser;
 
 import com.programacion.Unidad_7.proyectoUser.model.User;
-import com.programacion.Unidad_7.proyectoUser.services.impl.GestionFicheroLogger;
 import com.programacion.Unidad_7.proyectoUser.services.impl.GestionFicheroUser;
 import com.programacion.Unidad_7.proyectoUser.services.impl.LoggerService;
 import com.programacion.Unidad_7.proyectoUser.services.impl.ServiceUser;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class UbriCine {
 
 
     public static void main(String[] args) {
