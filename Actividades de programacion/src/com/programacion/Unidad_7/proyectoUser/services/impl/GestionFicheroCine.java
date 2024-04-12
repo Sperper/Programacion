@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class GestionFicheroCine {
 
     public Butaca[][] leerFicheroCine(String ruta) {
-        File fichCine = new File("C:\\Users\\sperper2907\\Desktop\\1 DAW\\Programacion\\Actividades de programacion\\src\\resources\\archivosTema7\\UbriCine\\cine.txt");
+        File fichCine = new File(ruta);
         Butaca[][] butacas = new Butaca[10][10];
 
         if (fichCine.exists() && fichCine.isFile() && fichCine.canRead()) {
@@ -43,7 +43,19 @@ public class GestionFicheroCine {
         return butacas;
     }
 
-    public void modificarFicheroCine(Butaca[][] salaDeCine){
+    public void modificarFicheroCine(Butaca[][] salaDeCine,String ruta){
+
+        File fichcine = new File(ruta);
+
+        if (fichcine.exists() && fichcine.isFile() && fichcine.canWrite()) {
+            try{
+
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
