@@ -47,15 +47,6 @@ public class GestionFicheroCine {
 
         File fichcine = new File(ruta);
 
-        if (fichcine.exists() && fichcine.isFile() && fichcine.canWrite()) {
-            try{
-
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
     }
 

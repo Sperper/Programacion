@@ -21,7 +21,7 @@ public class ServiceCine implements BasicServiceCine {
 
         this.nombreCine = nombreCine;
         this.gestion = new GestionFicheroCine();
-        this.salaCine = -
+        this.salaCine =
         /*
         [null,null,null,null,null,null,null,null,null,null]
         [null,null,null,null,null,null,null,null,null,null]
