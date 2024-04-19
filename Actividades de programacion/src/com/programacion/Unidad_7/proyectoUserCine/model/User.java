@@ -1,4 +1,4 @@
-package com.programacion.Unidad_7.proyectoUser.model;
+package com.programacion.Unidad_7.proyectoUserCine.model;
 
 public class User {
 

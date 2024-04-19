@@ -1,6 +1,6 @@
-package com.programacion.Unidad_7.proyectoUser.services.api;
+package com.programacion.Unidad_7.proyectoUserCine.services.api;
 
-import com.programacion.Unidad_7.proyectoUser.model.Butaca;
+import com.programacion.Unidad_7.proyectoUserCine.model.Butaca;
 
 public interface BasicServiceCine {
 
@@ -12,6 +12,6 @@ public interface BasicServiceCine {
 
     public void leerFicheroEntradas();
     public void anadirFicheroCine(Butaca b);
-    public void modificarFicheroCine();
+    public void modificarFicheroCine(Butaca[][] butacas);
 
 }

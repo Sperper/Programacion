@@ -1,6 +1,4 @@
-package com.programacion.Unidad_7.proyectoUser.model;
-
-import java.util.Objects;
+package com.programacion.Unidad_7.proyectoUserCine.model;
 
 public class Butaca {
 
@@ -9,7 +7,9 @@ public class Butaca {
     private String idUser;
 
     public Butaca(int fila, int asiento, String idUser) {
-
+        setAsiento(asiento);
+        setFila(fila);
+        setIdUser(idUser);
     }
 
     @Override
