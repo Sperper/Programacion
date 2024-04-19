@@ -17,7 +17,12 @@ public class ServiceCine implements BasicServiceCine {
 
     Scanner scan = new Scanner(System.in);
 
-    // Constructor
+
+
+    /**
+     * Contructor
+     * @param nombreCine -> Nombre que va a tener el cine
+     */
     public ServiceCine(String nombreCine) {
 
         this.nombreCine = nombreCine;
@@ -42,6 +47,9 @@ public class ServiceCine implements BasicServiceCine {
 
     }
 
+    /**
+     * Método para mostrar las butacas con 'XX' las que están sin comprar y con '__' las que está compradas
+     */
     @Override
     public void mostrarButacas() {
         for (int i = 0; i<this.salaCine.length; i++) {
@@ -61,6 +69,10 @@ public class ServiceCine implements BasicServiceCine {
         }
     }
 
+    /**
+     * Método para comprar una entrada
+     * @return true si se ha logrado hacer y false si no se ha podido
+     */
     @Override
     public boolean comprarEntrada() {
         System.out.println("Indique la fila");
@@ -87,6 +99,10 @@ public class ServiceCine implements BasicServiceCine {
         }
     }
 
+    /**
+     * Método para devolver una entrada comprada comparando si el usuario del comprador es el mismo
+     * @return -> true si se ha podido devolver o false si no se ha podido
+     */
     @Override
     public boolean devolverEntrada() {
 
@@ -113,6 +129,11 @@ public class ServiceCine implements BasicServiceCine {
         }
     }
 
+    /**
+     * Método para comprobar el comprador
+     * @param idUser -> Usuario del comprador
+     * @return -> true si es el comprador o false si no lo es
+     */
     @Override
     public boolean checkComprador(String idUser) {
         salaCine = gestion.leerFicheroCine("src/resources/archivosTema7/UbriCine/cine.txt");
@@ -132,16 +153,29 @@ public class ServiceCine implements BasicServiceCine {
         return esComprador;
     }
 
+
+    /**
+     * Método para leer el fichero entradas
+     */
     @Override
     public void leerFicheroEntradas() {
         gestion.leerFicheroCine("src/resources/archivosTema7/UbriCine/cine.txt");
     }
 
+
+    /**
+     * Método para añadir una butaca al fichero cine.txt
+     * @param b -> Parametro de tipo Butaca
+     */
     @Override
     public void anadirFicheroCine(Butaca b) {
         gestion.anadirFicheroCine(b, "src/resources/archivosTema7/UbriCine/cine.txt");
     }
 
+    /**
+     * Método para modificar el fichero cine.txt
+     * @param butacas -> Array bidimensional de butacas
+     */
     @Override
     public void modificarFicheroCine(Butaca[][] butacas) {
         gestion.modificarFicheroCine(butacas, "src/resources/archivosTema7/UbriCine/cine.txt");

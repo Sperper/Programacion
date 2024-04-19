@@ -14,6 +14,7 @@ public class ServiceUser implements BasicServiceUser{
     GestionFicheroUser gestion; // gestion es un objeto para poder llamar a los métodos de GestionFicheroUser
     LoggerService log;
 
+
     public ServiceUser(){
         this.users = new ArrayList<>();
         this.gestion = new GestionFicheroUser();
@@ -21,6 +22,10 @@ public class ServiceUser implements BasicServiceUser{
         this.log = new LoggerService();
     }
 
+    /**
+     * Metodo para dar de alta un usuario
+     * @return -> true si se ha podido dar de alta y false si no
+     */
     @Override
     public boolean altaUsuario() {
 
@@ -56,6 +61,10 @@ public class ServiceUser implements BasicServiceUser{
         }
     }
 
+    /**
+     * Método para inciar sesion con un usuario
+     * @return -> true si se ha podido iniciar sesion y false si no
+     */
     @Override
     public boolean loginUsuario() {
 
@@ -88,6 +97,12 @@ public class ServiceUser implements BasicServiceUser{
         }
     }
 
+    /**
+     * Método para comprobar si un usuario existe
+     * @param idUser -> Nombre del usuario
+     * @param password -> Contraseña del usuario
+     * @return -> true si existe y false si no
+     */
     @Override
     public boolean checkUser(String idUser, String password) {
 
@@ -122,6 +137,11 @@ public class ServiceUser implements BasicServiceUser{
 
     }
 
+    /**
+     * Método para saber si un usuario existe
+     * @param idUser -> nombre del usuario
+     * @return -> true si existe y false si no existe
+     */
     @Override
     public boolean userExists(String idUser) {
 
@@ -133,16 +153,26 @@ public class ServiceUser implements BasicServiceUser{
         return false;
     }
 
+    /**
+     * Metodo para leer el fichero users.txt
+     */
     @Override
     public void leerFicheroUsers() {
         this.users=gestion.leerFicherUser("src/resources/archivosTema7/users/users.txt");
     }
 
+    /**
+     * Metodo para añadir un fichero al fichero users.txt
+     * @param u -> usuario que se va a añadir al fichero
+     */
     @Override
     public void anadirFicheroUsers(User u) {
         gestion.anadirRegistroFichero("src/resources/archivosTema7/users/users.txt", u);
     }
 
+    /**
+     * Método para modificar el fichero users.txt
+     */
     @Override
     public void modificarFicheroUsers() {
         gestion.modificarFicheroUser(this.users, "src/resources/archivosTema7/users/users.txt");

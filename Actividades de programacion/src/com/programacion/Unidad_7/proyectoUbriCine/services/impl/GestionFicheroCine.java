@@ -6,6 +6,11 @@ import java.io.*;
 
 public class GestionFicheroCine {
 
+    /**
+     * Método que lee el fichero cine.txt
+     * @param ruta -> Ruta en la que se encuentra el fichero cine.txt
+     * @return -> Array bidimensional de Butacas
+     */
     public Butaca[][] leerFicheroCine(String ruta) {
         File fichCine = new File(ruta);
         Butaca[][] butacas = new Butaca[10][10];
@@ -40,6 +45,11 @@ public class GestionFicheroCine {
         return butacas;
     }
 
+    /**
+     * Método que modifica el fichero cine.txt
+     * @param salaDeCine -> Array bidimensional de butacas
+     * @param ruta -> Ruta en la que encuentra el fichero cine.txt
+     */
     public void modificarFicheroCine(Butaca[][] salaDeCine,String ruta){
         // Abrimos el fichero
         File fichcine = new File(ruta);
@@ -70,6 +80,11 @@ public class GestionFicheroCine {
 
     }
 
+    /**
+     * Método para añadir una butaca comprada al fichero cine.txt
+     * @param b -> butaca de tipo Butaca que se va a añadir
+     * @param ruta -> ruta donde se encuentra el archivo cine.txt
+     */
     public void anadirFicheroCine(Butaca b, String ruta) {
         // Inicializa el objeto File
         File fichero = new File(ruta);

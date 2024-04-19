@@ -12,20 +12,30 @@ public class UbriCine {
 
 
     public static void main(String[] args) {
+        // Se crea un objeto tipo GestionFicheroUser
         GestionFicheroUser gestUser = new GestionFicheroUser();
+        // Se crea un ArrayList de users
         ArrayList<User> users = new ArrayList<>();
+        // Se mete el contenido del fichero user.txt en el ArrayList users
         users = gestUser.leerFicherUser("src/resources/archivosTema7/users/users.txt");
+        // Se crea un objeto tipo ServiceUser
         ServiceUser servicio = new ServiceUser();
+        // Se crea un objeto tipo LoggerService
         LoggerService logger = new LoggerService();
+        // Se crea un objeto tipo GestionFicheroCine
         GestionFicheroCine gestCine = new GestionFicheroCine();
+        // Se crea un Array bidimensional de Butacas
         Butaca[][] entradasVendidas = new Butaca[10][10];
+        // Se mete el contenido del fichero cine.txt en el Array bidimensional creado anteriormente
         entradasVendidas = gestCine.leerFicheroCine("src/resources/archivosTema7/UbriCine/cine.txt");
         ServiceCine serviceCine = new ServiceCine("UbriCine");
         Scanner scan = new Scanner(System.in);
 
         int opc2 = 0;
         int opc = 0;
-        do { // Bucle do while que mostrará las opciones
+
+        // Bucle do while que mostrará las opciones
+        do {
             System.out.println("""
                     Bienvenido al sistema que desea hacer:
                     1. Alta
@@ -33,14 +43,18 @@ public class UbriCine {
                     0. Salir
                     """);
             try {
-
+                // Lee la opcion por teclado
                 opc = scan.nextInt();
+                // Switch para hacer la opción que ha marcado el usuario
                 switch (opc) {
                     case 1:
+                        // Se llama al método altaUsuario
                         servicio.altaUsuario();
                         break;
                     case 2:
+                        // Se comprueba si el usuario ha logrado iniciar sesion
                         if (servicio.loginUsuario()) {
+                            // Bucle do-while
                             do {
 
                                 System.out.println("""
@@ -70,17 +84,23 @@ public class UbriCine {
                                         break;
                                 }
                                 */
+                                    // if-else if para que vaya ejecutando lo que el usuario quiere hacer
                                     if (opc2 == 1) {
+                                        // Llama al método mostrarButacas
                                         serviceCine.mostrarButacas();
                                     } else if (opc2 == 2) {
+                                        // Llama el método comprarEntrada
                                         serviceCine.comprarEntrada();
                                     } else if (opc2 == 3) {
+                                        // Llama al método devolverEntrada
                                         serviceCine.devolverEntrada();
                                     } else if (opc2 == 0) {
+                                        // Sale del sistema
                                         System.out.println("Saliendo del sistema");
                                     } else {
                                         System.out.println("Opción incorrecta");
                                     }
+                                    // Captura la excepcion InputMismatchException
                                 } catch (InputMismatchException e) {
                                     System.out.println("ERROR EN LA OPCION");
                                 }
@@ -92,7 +112,7 @@ public class UbriCine {
                         break;
 
                 }
-
+                // Captura la excepcion InputMismatchException
             } catch (InputMismatchException e) {
                 System.out.println("ERROR EN LA OPCION, INTRODUCE UNA RESPUESTA VALIDA");
             }
