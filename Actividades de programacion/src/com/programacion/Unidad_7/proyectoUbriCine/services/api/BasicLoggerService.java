@@ -1,4 +1,4 @@
-package com.programacion.Unidad_7.proyectoUserCine.services.api;
+package com.programacion.Unidad_7.proyectoUbriCine.services.api;
 
 public interface BasicLoggerService {
 

@@ -1,6 +1,6 @@
-package com.programacion.Unidad_7.proyectoUserCine.services.api;
+package com.programacion.Unidad_7.proyectoUbriCine.services.api;
 
-import com.programacion.Unidad_7.proyectoUserCine.model.User;
+import com.programacion.Unidad_7.proyectoUbriCine.model.User;
 
 public interface BasicServiceUser {
 

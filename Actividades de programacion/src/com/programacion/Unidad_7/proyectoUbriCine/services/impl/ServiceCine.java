@@ -1,7 +1,7 @@
-package com.programacion.Unidad_7.proyectoUserCine.services.impl;
+package com.programacion.Unidad_7.proyectoUbriCine.services.impl;
 
-import com.programacion.Unidad_7.proyectoUserCine.model.Butaca;
-import com.programacion.Unidad_7.proyectoUserCine.services.api.BasicServiceCine;
+import com.programacion.Unidad_7.proyectoUbriCine.model.Butaca;
+import com.programacion.Unidad_7.proyectoUbriCine.services.api.BasicServiceCine;
 
 import java.util.Scanner;
 

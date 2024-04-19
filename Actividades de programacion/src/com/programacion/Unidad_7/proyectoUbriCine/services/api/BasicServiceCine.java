@@ -1,6 +1,6 @@
-package com.programacion.Unidad_7.proyectoUserCine.services.api;
+package com.programacion.Unidad_7.proyectoUbriCine.services.api;
 
-import com.programacion.Unidad_7.proyectoUserCine.model.Butaca;
+import com.programacion.Unidad_7.proyectoUbriCine.model.Butaca;
 
 public interface BasicServiceCine {
 

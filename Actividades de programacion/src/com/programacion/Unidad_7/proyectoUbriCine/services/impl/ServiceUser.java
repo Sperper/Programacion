@@ -1,7 +1,7 @@
-package com.programacion.Unidad_7.proyectoUserCine.services.impl;
+package com.programacion.Unidad_7.proyectoUbriCine.services.impl;
 
-import com.programacion.Unidad_7.proyectoUserCine.model.User;
-import com.programacion.Unidad_7.proyectoUserCine.services.api.BasicServiceUser;
+import com.programacion.Unidad_7.proyectoUbriCine.model.User;
+import com.programacion.Unidad_7.proyectoUbriCine.services.api.BasicServiceUser;
 
 import java.util.ArrayList;
 import java.util.Scanner;

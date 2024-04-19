@@ -1,6 +1,6 @@
-package com.programacion.Unidad_7.proyectoUserCine.services.impl;
+package com.programacion.Unidad_7.proyectoUbriCine.services.impl;
 
-import com.programacion.Unidad_7.proyectoUserCine.model.User;
+import com.programacion.Unidad_7.proyectoUbriCine.model.User;
 
 import java.io.*;
 import java.util.ArrayList;

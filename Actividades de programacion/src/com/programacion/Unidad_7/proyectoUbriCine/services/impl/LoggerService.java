@@ -1,6 +1,6 @@
-package com.programacion.Unidad_7.proyectoUserCine.services.impl;
+package com.programacion.Unidad_7.proyectoUbriCine.services.impl;
 
-import com.programacion.Unidad_7.proyectoUserCine.services.api.BasicLoggerService;
+import com.programacion.Unidad_7.proyectoUbriCine.services.api.BasicLoggerService;
 
 import java.time.LocalDateTime;
 
