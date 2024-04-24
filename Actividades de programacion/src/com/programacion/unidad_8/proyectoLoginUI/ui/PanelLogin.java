@@ -33,11 +33,12 @@ public class PanelLogin extends JPanel {
             System.out.println("User: "+user+"\n"+
                     "Password: "+password);
              */
-
             if (serviceUser.loginUI(textFieldUsuario.getText(), textFieldPassword.getText())) {
                 System.out.println("Esta registrado");
+                estaRegistrado.setText("Esta registrado");
             } else {
                 System.out.println("Pa tu casa");
+                estaRegistrado.setText("Pa tu casa");
             }
         }
 
@@ -77,6 +78,9 @@ public class PanelLogin extends JPanel {
         labelPassword = new JLabel("Password");
         labelPassword.setSize(new Dimension(100,32));
         labelPassword.setLocation(200, 250);
+        estaRegistrado = new JLabel();
+        estaRegistrado.setSize(new Dimension(200,100));
+        estaRegistrado.setLocation(400,225);
 
         textFieldUsuario = new JTextField();
         textFieldUsuario.setSize(new Dimension(100,32));
@@ -85,6 +89,7 @@ public class PanelLogin extends JPanel {
         textFieldPassword.setSize(new Dimension(100,32));
         textFieldPassword.setLocation(265,250);
 
+        this.add(estaRegistrado);
         this.add(textFieldPassword);
         this.add(textFieldUsuario);
         this.add(labelUsuario);
